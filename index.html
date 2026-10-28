@@ -140,6 +140,7 @@ if(e.key === 'Enter'){ document.getElementById('accessKeyBtn').click(); }
 <p class="lead">Tarjetas virtuales en la wallet para quienes viajan, tarjetas de tesorería para los 270 proveedores, conexión con Siesa y reportería en tiempo real. Preparado para el equipo financiero de Mattelsa.</p>
 <div class="stat-row">
 <span class="pill"><b>20</b> usuarios</span>
+<span class="pill"><b>46</b> tarjetas activas</span>
 <span class="pill"><b>Ilimitadas</b> tarjetas virtuales</span>
 <span class="pill"><b>37 días</b> sin interés</span>
 <span class="pill"><b>1%</b> cashback · 6 meses</span>
@@ -183,12 +184,12 @@ if(e.key === 'Enter'){ document.getElementById('accessKeyBtn').click(); }
 </div>
 <div class="field">
 <label>TRM del día (COP/USD)</label>
-<input type="number" id="trm" value="3156.32" step="0.01" />
+<input type="number" id="trm" value="3148.02" step="0.01" />
 </div>
 <div class="field">
 <label>Gasto mensual en tarjetas (COP)</label>
-<input type="number" id="gastoMensual" value="300000000" step="10000000" />
-<span class="hint">Consumo actual en tarjetas para pago a proveedores</span>
+<input type="number" id="gastoMensual" value="215500000" step="10000000" />
+<span class="hint">Promedio mensual reportado por Mattelsa · 46 tarjetas activas (últimos 3 meses)</span>
 </div>
 <div class="field">
 <label class="hint">Gravamen 4x1000 — automático, no editable</label>
@@ -204,13 +205,13 @@ if(e.key === 'Enter'){ document.getElementById('accessKeyBtn').click(); }
 <div class="module-note">Legalización de viáticos vía agente de IA en WhatsApp y conciliación con Siesa, en vez de captura manual.</div>
 <div class="calc-grid" id="facturasAssumptions">
 <div class="field"><label>Salario mensual operativo (COP)</label><input type="number" id="salarioMensual" value="3500000" step="100000" /></div>
-<div class="field"><label>Facturas procesadas al mes</label><input type="number" id="facturasMes" value="200" step="10" /></div>
+<div class="field"><label>Facturas procesadas al mes</label><input type="number" id="facturasMes" value="355" step="10" /><span class="hint">355 transacciones promedio al mes reportadas por Mattelsa</span></div>
 <div class="field"><label>Minutos por factura (captura manual)</label><input type="number" id="minutosAhorrados" value="8" step="1" /></div>
 <div class="field"><label>Horas trabajadas al mes</label><input type="number" id="horasMes" value="160" step="10" /></div>
 </div>
 </div>
 <div class="module">
-<div class="module-head"><span>🏧 Ahorro en Retiros en Efectivo</span><label class="toggle"><input type="checkbox" id="chkRetiros"/></label></div>
+<div class="module-head"><span>🏧 Ahorro en Retiros en Efectivo <span style="font-size:11px;color:var(--text-dim);font-weight:400;">· en evaluación por Mattelsa</span></span><label class="toggle"><input type="checkbox" id="chkRetiros"/></label></div>
 <div class="calc-grid" id="retirosAssumptions">
 <div class="field"><label>Monto de efectivo mensual (COP)</label><input type="number" id="gastoRetiros" value="0" step="1000000" /></div>
 <div class="field">
@@ -220,7 +221,7 @@ if(e.key === 'Enter'){ document.getElementById('accessKeyBtn').click(); }
 </div>
 </div>
 </div>
-<p class="assump">Fórmulas: GMF = gasto anual en tarjetas × 0.4%. Cashback = gasto mensual × 6 × 1% (solo año 1). Automatización de Facturas = facturas/mes × minutos/60 × (salario mensual operativo ÷ horas trabajadas al mes) × 12. Retiros en Efectivo = (3% − % de comisión) × monto de efectivo mensual × 12, solo si el % de comisión es menor al 3%. ROE = (Ahorro total − Costo del plan) ÷ Costo del plan. Los supuestos de facturas, salario y horas son referenciales y no están confirmados con Mattelsa; el gasto mensual corresponde a los $300MM COP en tarjetas para pago a proveedores mencionados en la reunión. TRM oficial del 20 de octubre de 2026.</p>
+<p class="assump">Fórmulas: GMF = gasto anual en tarjetas × 0.4%. Cashback = gasto mensual × 6 × 1% (solo año 1). Automatización de Facturas = facturas/mes × minutos/60 × (salario mensual operativo ÷ horas trabajadas al mes) × 12. Retiros en Efectivo = (3% − % de comisión) × monto de efectivo mensual × 12, solo si el % de comisión es menor al 3%. ROE = (Ahorro total − Costo del plan) ÷ Costo del plan. Gasto mensual ($215,5MM COP) y transacciones (355/mes) reportados por Mattelsa para sus 46 tarjetas activas (13 de gastos fijos y 33 de viáticos). Salario operativo, minutos por factura y horas trabajadas son supuestos referenciales, no confirmados. El módulo de retiros en efectivo queda desactivado mientras Mattelsa evalúa su viabilidad. TRM oficial del 28 de octubre de 2026.</p>
 </div>
 <h3 style="font-size:14px;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin:6px 0 4px;">Ahorros por rubro · Anual</h3>
 <div class="savings-grid">
@@ -255,7 +256,8 @@ if(e.key === 'Enter'){ document.getElementById('accessKeyBtn').click(); }
 <h2><span class="tag">Diagnóstico</span>Hoy vs. Con Jeeves</h2>
 <table>
 <tr><th>Hoy</th><th>Con Jeeves · Plan Gold</th></tr>
-<tr><td>45 tarjetas compartiendo viáticos y tesorería</td><td>Tesorería en tarjetas físicas; viáticos en tarjetas virtuales ilimitadas cargadas a la wallet</td></tr>
+<tr><td>46 tarjetas activas: 13 de gastos fijos y 33 de viáticos</td><td>13 tarjetas de tesorería para gastos fijos; 33 (o más) virtuales ilimitadas en la wallet para viáticos</td></tr>
+<tr><td>~$215,5MM COP y 355 transacciones al mes por legalizar</td><td>Soportes asociados automáticamente vía WhatsApp y conciliados con Siesa</td></tr>
 <tr><td>Viáticos sin un flujo de viaje ligado a la tarjeta</td><td>Creación de tarjeta con flujo de viaje: presupuesto, vigencia y cashback por viaje</td></tr>
 <tr><td>270 proveedores pagados con tarjetas de tesorería</td><td>Dispersión desde la plataforma y conexión con Siesa</td></tr>
 <tr><td>Necesidad de reportes consolidados por tipo de tarjeta</td><td>Reportería en tiempo real por tarjeta, usuario y centro de costo</td></tr>
@@ -268,7 +270,7 @@ if(e.key === 'Enter'){ document.getElementById('accessKeyBtn').click(); }
 <h2><span class="tag">Propuesta</span>Plan Gold para Mattelsa</h2>
 <div class="grid grid-2">
 <div class="card"><h3 style="font-size:14px;">Incluye</h3><p style="font-size:13.5px;">20 usuarios · USD 3.000 anuales · Tarjetas virtuales ilimitadas · Tarjetas en Apple Pay / Google Pay · Flujo de viaje · Conexión con Siesa · Reportería · 1% cashback 6 meses · 37 días sin interés</p></div>
-<div class="card"><h3 style="font-size:14px;">Estructura de tarjetas</h3><p style="font-size:13.5px;">Tesorería: tarjetas para pago de proveedores · Viáticos: solo virtuales en la wallet · Cantidades y gasto promedio por grupo por confirmar con Mattelsa</p></div>
+<div class="card"><h3 style="font-size:14px;">Estructura de tarjetas</h3><p style="font-size:13.5px;">Tesorería: 13 tarjetas para gastos fijos y proveedores · Viáticos: 33 tarjetas, solo virtuales en la wallet · Gasto promedio: $215,5MM COP/mes · 355 transacciones/mes</p></div>
 </div>
 </div>
 </section>
