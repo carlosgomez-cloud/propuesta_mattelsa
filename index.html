@@ -213,7 +213,7 @@ if(e.key === 'Enter'){ document.getElementById('accessKeyBtn').click(); }
 <div class="field"><label>Cashback Jeeves · primeros meses (%)</label><input type="number" id="jCb1" value="1" step="0.05" /></div>
 <div class="field"><label>Meses con cashback Jeeves</label><input type="number" id="jMeses" value="6" step="1" min="0" max="12" /></div>
 <div class="field"><label>Cashback Jeeves · meses siguientes (%)</label><input type="number" id="jCb2" value="0" step="0.05" /><span class="hint">Aplica desde el mes siguiente al periodo inicial</span></div>
-<div class="field"><label>Cashback Clara (%)</label><input type="number" id="cCb" value="0.10" step="0.05" /><span class="hint">Referencia sobre 12 meses del mismo consumo</span></div>
+<div class="field"><label>Cashback Clara (%)</label><input type="number" id="cCb" value="0.10" step="0.05" /><span class="hint">Cashback actual de Clara, sobre 12 meses del mismo consumo</span></div>
 </div>
 <p class="assump">Fórmulas: suscripción Jeeves = valor del plan × TRM. Suscripción Clara = valor mensual × 12. Cashback Jeeves año 1 = consumo × % inicial × meses + consumo × % siguiente × meses restantes. Cashback Clara = consumo × % × 12. Costo neto = suscripción − cashback. ROE = (cashback − suscripción) ÷ suscripción. No incluimos el 4x1000 ni la automatización de facturas porque ambas plataformas ofrecen beneficios equivalentes; la comparación se centra en lo que cambia. El consumo de $215,5MM/mes corresponde a lo reportado por Mattelsa (46 tarjetas activas, últimos 3 meses).</p>
 </div>
@@ -256,6 +256,7 @@ if(e.key === 'Enter'){ document.getElementById('accessKeyBtn').click(); }
 <tr><td>Agentes de IA<small>Creación de políticas, seguimiento de soportes faltantes y detección de tendencias</small></td><td><span class="yes">✓</span></td><td><span class="na">—</span></td></tr>
 <tr><td>Conexión con Siesa<small>Carga de centros de costo y asignación de cada gasto a su código contable</small></td><td><span class="yes">✓</span></td><td><span class="na">—</span></td></tr>
 <tr><td>API para integración con el ERP</td><td><span class="yes">✓ Sin costo</span></td><td><span class="na">—</span></td></tr>
+<tr><td>Modelo de precio<small>Un solo plan con todas las capacidades, sin cobros adicionales por módulo o proceso</small></td><td><span class="yes">✓ Todo incluido</span></td><td><span class="na">Módulos adicionales con costo</span></td></tr>
 <tr><td>Privacidad y acceso segmentado<small>Los administradores no ven datos sensibles de los usuarios</small></td><td><span class="yes">✓</span></td><td><span class="na">—</span></td></tr>
 </table>
 </div>
@@ -272,7 +273,7 @@ if(e.key === 'Enter'){ document.getElementById('accessKeyBtn').click(); }
 <div class="wrap">
 <h2><span class="tag">Propuesta</span>Plan Gold para Mattelsa</h2>
 <div class="grid grid-2">
-<div class="card"><h3 style="font-size:14px;">Plan Gold · USD 3.000 / año</h3><p style="font-size:22px;font-weight:800;color:var(--text);margin:4px 0 8px;" id="planCop">—</p><p style="font-size:13.5px;">20 usuarios · Tarjetas físicas y virtuales ilimitadas · Apple Pay / Google Pay · Travel Manager · Jeeves Pay · Conexión con Siesa y API · Agentes de IA · Reportería en tiempo real</p></div>
+<div class="card"><h3 style="font-size:14px;">Plan Gold · USD 3.000 / año</h3><p style="font-size:22px;font-weight:800;color:var(--text);margin:4px 0 8px;" id="planCop">—</p><p style="font-size:12.5px;color:var(--gold);margin:0 0 8px;">Se pacta en pesos colombianos a la TRM del día de la firma: sin exposición a tasa de cambio.</p><p style="font-size:13.5px;">20 usuarios · Tarjetas físicas y virtuales ilimitadas · Apple Pay / Google Pay · Travel Manager · Jeeves Pay · Conexión con Siesa y API · Agentes de IA · Reportería en tiempo real</p></div>
 <div class="card"><h3 style="font-size:14px;">Beneficios financieros</h3><p style="font-size:22px;font-weight:800;color:var(--green);margin:4px 0 8px;" id="planCb">—</p><p style="font-size:13.5px;">1% de cashback durante los primeros 6 meses · Hasta 37 días sin intereses · Estructura: 13 tarjetas de gastos fijos y 33 de viáticos</p></div>
 </div>
 </div>
