@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Jeeves × Mattelsa — Propuesta Gold</title>
+<title>Jeeves × Mattelsa — Comparativo Plan Gold</title>
 <style>
 :root{
 --bg:#0B0B0E; --bg-card:#141418; --bg-card-2:#17171C;
@@ -128,6 +128,43 @@ if(e.key === 'Enter'){ document.getElementById('accessKeyBtn').click(); }
 });
 })();
 </script>
+<style>
+.cmp td,.cmp th{vertical-align:middle;}
+.cmp td:nth-child(2),.cmp td:nth-child(3),.cmp th:nth-child(2),.cmp th:nth-child(3){text-align:center;width:24%;}
+.cmp td:first-child{color:var(--text);font-weight:600;}
+.cmp small{display:block;color:var(--text-dim);font-weight:400;font-size:11.5px;margin-top:2px;}
+.yes{color:var(--green);font-weight:700;}
+.no{color:#e5484d;font-weight:700;}
+.na{color:var(--text-dim);}
+.gold{color:var(--gold);}
+.green{color:var(--green);}
+.slider-box{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin-bottom:18px;}
+.slider-box .val{font-size:26px;font-weight:800;color:var(--text);}
+.slider-box input[type=range]{width:100%;accent-color:var(--gold);margin:12px 0 6px;}
+.slider-box .marks{display:flex;justify-content:space-between;font-size:11px;color:var(--text-dim);}
+.chip{background:var(--bg-card-2);border:1px solid var(--border);color:var(--text-dim);border-radius:999px;padding:5px 12px;font-size:12px;cursor:pointer;font-family:inherit;}
+.chip.on{border-color:var(--gold);color:var(--gold);}
+.vs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0;}
+@media(max-width:800px){.vs-grid{grid-template-columns:1fr;}}
+.vs{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px 18px;}
+.vs .label{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;}
+.vs .row{display:flex;justify-content:space-between;align-items:baseline;margin:4px 0;font-size:13px;color:var(--text-dim);}
+.vs .row b{font-size:17px;color:var(--text);}
+.vs .row.j b{color:var(--green);}
+.vs .diff{margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:12.5px;color:var(--text-dim);}
+.vs .diff b{font-size:15px;}
+.hl{background:linear-gradient(135deg,rgba(201,168,76,0.12),rgba(201,168,76,0.02));border:1px solid var(--gold);border-radius:14px;padding:18px 20px;margin-top:14px;display:grid;grid-template-columns:1.3fr 1fr;gap:18px;align-items:center;}
+@media(max-width:800px){.hl{grid-template-columns:1fr;}}
+.hl .big{font-size:30px;font-weight:800;color:var(--gold);}
+.va-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:900px){.va-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.va-grid{grid-template-columns:1fr;}}
+.va{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:18px;}
+.va .ic{font-size:22px;margin-bottom:6px;}
+.va h3{font-size:15px;margin-bottom:6px;}
+.va p{font-size:13px;margin:0;}
+.note{font-size:11.5px;color:var(--text-dim);margin-top:10px;}
+</style>
 <!-- HERO -->
 <section class="hero">
 <div class="wrap">
@@ -136,132 +173,98 @@ if(e.key === 'Enter'){ document.getElementById('accessKeyBtn').click(); }
 <div class="client-logo-badge"><img src="mattelsa-logo.svg" alt="Mattelsa" style="height:22px;border-radius:0;"/></div>
 </div>
 <span class="pill">Propuesta Comercial · Plan Gold · Octubre 2026</span>
-<h1>Tesorería, viáticos y pagos a proveedores con dispersión a cuentas — en una sola plataforma.</h1>
-<p class="lead">Tarjetas virtuales en la wallet para quienes viajan, tarjetas de tesorería para los 270 proveedores, conexión con Siesa y reportería en tiempo real. Preparado para el equipo financiero de Mattelsa.</p>
+<h1>Más plataforma por un costo neto menor que su solución actual.</h1>
+<p class="lead">Viáticos en tarjetas virtuales en la wallet con flujo de viaje, tesorería y pagos a proveedores con dispersión a cuentas, conexión con Siesa y agentes de IA — comparado frente a Clara sobre el mismo consumo.</p>
 <div class="stat-row">
-<span class="pill"><b>20</b> usuarios</span>
 <span class="pill"><b>46</b> tarjetas activas</span>
-<span class="pill"><b>Ilimitadas</b> tarjetas virtuales</span>
-<span class="pill"><b>37 días</b> sin interés</span>
+<span class="pill"><b>20</b> usuarios</span>
 <span class="pill"><b>1%</b> cashback · 6 meses</span>
+<span class="pill"><b>Ilimitadas</b> tarjetas virtuales</span>
 </div>
 <div class="cards-row">
-<div class="cc-col">
-<div class="cc-photo cc-world-elite"><img src="jeeves-card-world-elite.png" alt="Tarjeta Jeeves World Elite"/></div>
-<div class="cc-caption">World Elite · Directivos</div>
-</div>
-<div class="cc-col">
-<div class="cc-photo cc-corporate"><img src="jeeves-card-corporate.png" alt="Tarjeta corporativa Jeeves"/></div>
-<div class="cc-caption">Corporativa · Tesorería</div>
-</div>
-<div class="cc-col">
-<div class="cc-photo cc-virtual"><img src="jeeves-card-virtual.png" alt="Tarjeta virtual Jeeves"/></div>
-<div class="cc-caption">Virtual · Wallet para viáticos</div>
-</div>
-<div class="cc-col">
-<div class="cc-photo cc-proveedores"><img src="jeeves-pay-proveedores.png" alt="Jeeves Pay - Dispersión a proveedores"/></div>
-<div class="cc-caption">Jeeves Pay · Dispersión de pagos a proveedores</div>
-</div>
+<div class="cc-col"><div class="cc-photo cc-world-elite"><img src="jeeves-card-world-elite.png" alt="Tarjeta Jeeves World Elite"/></div><div class="cc-caption">World Elite · Directivos</div></div>
+<div class="cc-col"><div class="cc-photo cc-corporate"><img src="jeeves-card-corporate.png" alt="Tarjeta corporativa Jeeves"/></div><div class="cc-caption">Corporativa · Gastos fijos</div></div>
+<div class="cc-col"><div class="cc-photo cc-virtual"><img src="jeeves-card-virtual.png" alt="Tarjeta virtual Jeeves"/></div><div class="cc-caption">Virtual · Wallet para viáticos</div></div>
+<div class="cc-col"><div class="cc-photo cc-proveedores"><img src="jeeves-pay-proveedores.png" alt="Jeeves Pay - Dispersión a proveedores"/></div><div class="cc-caption">Jeeves Pay · Dispersión de pagos a proveedores</div></div>
 </div>
 </div>
 </section>
-<!-- CALCULADORA -->
+<!-- COMPARATIVO ECONOMICO -->
 <section>
 <div class="wrap">
-<h2><span class="tag">Simulador</span>¿Cuánto ahorra Mattelsa con Jeeves?</h2>
-<p>Estos son los ahorros anuales estimados con el Plan Gold. Con el botón puedes ver y ajustar los cálculos y supuestos — todo se recalcula al instante, en COP y a la TRM del día.</p>
+<h2><span class="tag">Comparativo económico</span>Jeeves vs. Clara sobre el mismo consumo</h2>
+<p>Mueve la barra para simular el consumo mensual en tarjetas. Comparamos solo lo que cambia entre las dos plataformas: la suscripción y el cashback. Con el botón puedes ver y ajustar los supuestos.</p>
 <div class="calc">
-<button type="button" id="toggleCalc" class="pill" style="cursor:pointer;font-family:inherit;margin-bottom:18px;">⚙️ Ver cálculos y supuestos</button>
+<div class="slider-box">
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+<div><div style="font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.8px;">Consumo mensual en tarjetas</div><div class="val" id="gastoLbl">—</div></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;"><button type="button" class="chip" data-g="215500000">$215,5MM · reportado</button><button type="button" class="chip" data-g="300000000">$300MM</button></div>
+</div>
+<input type="range" id="gasto" min="100000000" max="500000000" step="500000" value="215500000"/>
+<div class="marks"><span>$100MM</span><span>$300MM</span><span>$500MM</span></div>
+</div>
+<button type="button" id="toggleCalc" class="pill" style="cursor:pointer;font-family:inherit;margin-bottom:14px;">⚙️ Ver cálculos y supuestos</button>
 <div id="calcPanel" hidden>
 <div class="calc-grid">
-<div class="field">
-<label>Plan de la Plataforma</label>
-<input type="text" value="Gold · 20 usuarios" disabled />
+<div class="field"><label>Plan de la Plataforma</label><input type="text" value="Gold · 20 usuarios" disabled /></div>
+<div class="field"><label>Valor Anual del Plan Jeeves (USD)</label><input type="number" id="planUSD" value="3000" step="100" /></div>
+<div class="field"><label>TRM del día (COP/USD)</label><input type="number" id="trm" value="3148.02" step="0.01" /><span class="hint">TRM oficial · 28 de octubre de 2026</span></div>
+<div class="field"><label>Suscripción mensual Clara (COP)</label><input type="number" id="claraFee" value="600000" step="10000" /><span class="hint">Valor que hoy paga Mattelsa</span></div>
+<div class="field"><label>Cashback Jeeves · primeros meses (%)</label><input type="number" id="jCb1" value="1" step="0.05" /></div>
+<div class="field"><label>Meses con cashback Jeeves</label><input type="number" id="jMeses" value="6" step="1" min="0" max="12" /></div>
+<div class="field"><label>Cashback Jeeves · meses siguientes (%)</label><input type="number" id="jCb2" value="0" step="0.05" /><span class="hint">Aplica desde el mes siguiente al periodo inicial</span></div>
+<div class="field"><label>Cashback Clara (%)</label><input type="number" id="cCb" value="0.10" step="0.05" /><span class="hint">Referencia sobre 12 meses del mismo consumo</span></div>
 </div>
-<div class="field">
-<label>Valor Anual del Plan (USD)</label>
-<input type="number" id="valorPlanUSD" value="3000" step="100" />
+<p class="assump">Fórmulas: suscripción Jeeves = valor del plan × TRM. Suscripción Clara = valor mensual × 12. Cashback Jeeves año 1 = consumo × % inicial × meses + consumo × % siguiente × meses restantes. Cashback Clara = consumo × % × 12. Costo neto = suscripción − cashback. ROE = (cashback − suscripción) ÷ suscripción. No incluimos el 4x1000 ni la automatización de facturas porque ambas plataformas ofrecen beneficios equivalentes; la comparación se centra en lo que cambia. El consumo de $215,5MM/mes corresponde a lo reportado por Mattelsa (46 tarjetas activas, últimos 3 meses).</p>
 </div>
-<div class="field">
-<label>TRM del día (COP/USD)</label>
-<input type="number" id="trm" value="3148.02" step="0.01" />
+<div class="tbl" style="overflow-x:auto;">
+<table class="cmp">
+<tr><th>Concepto</th><th>Jeeves · Gold</th><th>Clara</th></tr>
+<tr><td>Suscripción mensual</td><td><b id="feeJm">—</b><small id="feeJy">—</small></td><td><span id="feeCm">—</span><small id="feeCy">—</small></td></tr>
+<tr><td>Cashback</td><td><b class="gold" id="cbJpct">—</b><small id="cbJpct2">—</small></td><td><span id="cbCpct">—</span><small>sobre 12 meses</small></td></tr>
+<tr><td>Cashback estimado · primer año</td><td><b class="green" id="cbJ1">—</b></td><td id="cbC1">—</td></tr>
+</table>
 </div>
-<div class="field">
-<label>Gasto mensual en tarjetas (COP)</label>
-<input type="number" id="gastoMensual" value="215500000" step="10000000" />
-<span class="hint">Promedio mensual reportado por Mattelsa · 46 tarjetas activas (últimos 3 meses)</span>
+<div class="vs-grid">
+<div class="vs"><div class="label">Costo neto · Primer año</div><div class="row j"><span>Jeeves</span><b id="netJ1">—</b></div><div class="row"><span>Clara</span><b id="netC1">—</b></div><div class="diff" id="d1">—</div></div>
+<div class="vs"><div class="label">Costo neto · A partir del 2° año</div><div class="row j"><span>Jeeves</span><b id="netJ2">—</b></div><div class="row"><span>Clara</span><b id="netC2">—</b></div><div class="diff" id="d2">—</div></div>
+<div class="vs"><div class="label">Costo neto acumulado · 24 meses</div><div class="row j"><span>Jeeves</span><b id="netJ24">—</b></div><div class="row"><span>Clara</span><b id="netC24">—</b></div><div class="diff" id="d24">—</div></div>
 </div>
-<div class="field">
-<label class="hint">Gravamen 4x1000 — automático, no editable</label>
-<input type="text" id="gmfPreview" disabled />
-</div>
-<div class="field">
-<label class="hint">Cashback 1% · primeros 6 meses — automático</label>
-<input type="text" id="cashbackPreview" disabled />
-</div>
-</div>
-<div class="module">
-<div class="module-head"><span>🧾 Ahorro por Automatización de Facturas</span><label class="toggle"><input type="checkbox" id="chkFacturas" checked/></label></div>
-<div class="module-note">Legalización de viáticos vía agente de IA en WhatsApp y conciliación con Siesa, en vez de captura manual.</div>
-<div class="calc-grid" id="facturasAssumptions">
-<div class="field"><label>Salario mensual operativo (COP)</label><input type="number" id="salarioMensual" value="3500000" step="100000" /></div>
-<div class="field"><label>Facturas procesadas al mes</label><input type="number" id="facturasMes" value="355" step="10" /><span class="hint">355 transacciones promedio al mes reportadas por Mattelsa</span></div>
-<div class="field"><label>Minutos por factura (captura manual)</label><input type="number" id="minutosAhorrados" value="8" step="1" /></div>
-<div class="field"><label>Horas trabajadas al mes</label><input type="number" id="horasMes" value="160" step="10" /></div>
-</div>
-</div>
-<div class="module">
-<div class="module-head"><span>🏧 Ahorro en Retiros en Efectivo <span style="font-size:11px;color:var(--text-dim);font-weight:400;">· en evaluación por Mattelsa</span></span><label class="toggle"><input type="checkbox" id="chkRetiros"/></label></div>
-<div class="calc-grid" id="retirosAssumptions">
-<div class="field"><label>Monto de efectivo mensual (COP)</label><input type="number" id="gastoRetiros" value="0" step="1000000" /></div>
-<div class="field">
-<label>Porcentaje de la comisión negociada (%)</label>
-<input type="number" id="comisionRetiros" value="2" step="0.1" />
-<span class="hint">vs. 3% tarifa estándar Jeeves — el ahorro aplica si lo negociado es menor</span>
-</div>
-</div>
-</div>
-<p class="assump">Fórmulas: GMF = gasto anual en tarjetas × 0.4%. Cashback = gasto mensual × 6 × 1% (solo año 1). Automatización de Facturas = facturas/mes × minutos/60 × (salario mensual operativo ÷ horas trabajadas al mes) × 12. Retiros en Efectivo = (3% − % de comisión) × monto de efectivo mensual × 12, solo si el % de comisión es menor al 3%. ROE = (Ahorro total − Costo del plan) ÷ Costo del plan. Gasto mensual ($215,5MM COP) y transacciones (355/mes) reportados por Mattelsa para sus 46 tarjetas activas (13 de gastos fijos y 33 de viáticos). Salario operativo, minutos por factura y horas trabajadas son supuestos referenciales, no confirmados. El módulo de retiros en efectivo queda desactivado mientras Mattelsa evalúa su viabilidad. TRM oficial del 28 de octubre de 2026.</p>
-</div>
-<h3 style="font-size:14px;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin:6px 0 4px;">Ahorros por rubro · Anual</h3>
-<div class="savings-grid">
-<div class="save-card"><div class="label">Ahorro 4x1000 (GMF)</div><div class="value" id="outGMF">—</div></div>
-<div class="save-card"><div class="label">Cashback 1% · 6 meses</div><div class="value" id="outCashback">—</div></div>
-<div class="save-card"><div class="label">Automatización de Facturas</div><div class="value" id="outFacturas">—</div></div>
-<div class="save-card"><div class="label">Retiros en Efectivo</div><div class="value" id="outRetiros">—</div></div>
-</div>
-<div class="totals-grid">
-<div class="total-card">
-<div class="label">Ahorro Total · Primer Año</div>
-<div class="value" id="outAhorroY1">—</div>
-<div class="sub" id="outNetoY1sub" style="font-size:12.5px;color:var(--text-dim);margin-top:6px;">&nbsp;</div>
-</div>
-<div class="total-card">
-<div class="label">Ahorro Total · A partir del 2° año</div>
-<div class="value" id="outAhorroY2">—</div>
-<div class="sub" id="outNetoY2sub" style="font-size:12.5px;color:var(--text-dim);margin-top:6px;">&nbsp;</div>
-</div>
-</div>
-<h3 style="font-size:14px;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin:22px 0 4px;">🏆 ROE — Retorno de la inversión en la plataforma</h3>
+<h3 style="font-size:14px;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin:22px 0 4px;">🏆 ROE de la suscripción · Primer año</h3>
 <div class="roe-grid">
-<div class="roe-card"><div class="label">Primer año</div><div class="value" id="outROE1">—</div><div class="sub" id="outROE1sub">&nbsp;</div></div>
-<div class="roe-card"><div class="label">A partir del segundo año</div><div class="value" id="outROE2">—</div><div class="sub" id="outROE2sub">&nbsp;</div></div>
+<div class="roe-card"><div class="label">Jeeves · Gold</div><div class="value" id="roeJ">—</div><div class="sub" id="roeJs">&nbsp;</div></div>
+<div class="roe-card" style="border-color:var(--border);background:var(--bg-card);"><div class="label">Clara</div><div class="value" id="roeC" style="color:var(--text-dim);">—</div><div class="sub" id="roeCs">&nbsp;</div></div>
+</div>
+<div class="hl">
+<div><div style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;">Consumo mínimo mensual para que Jeeves cueste menos que Clara a 24 meses</div><div class="big" id="breakeven">—</div><div style="font-size:12.5px;color:var(--text-dim);" id="breakevenSub">—</div></div>
+<div style="font-size:13px;color:var(--text-dim);">Por encima de ese consumo, Jeeves cuesta menos que Clara en el acumulado de dos años, y además incluye las capacidades que se comparan abajo.</div>
 </div>
 </div>
 </div>
 </section>
-<!-- DIAGNOSTICO -->
+<!-- VALORES AGREGADOS -->
 <section>
 <div class="wrap">
-<h2><span class="tag">Diagnóstico</span>Hoy vs. Con Jeeves</h2>
-<table>
-<tr><th>Hoy</th><th>Con Jeeves · Plan Gold</th></tr>
-<tr><td>46 tarjetas activas: 13 de gastos fijos y 33 de viáticos</td><td>13 tarjetas de tesorería para gastos fijos; 33 (o más) virtuales ilimitadas en la wallet para viáticos</td></tr>
-<tr><td>~$215,5MM COP y 355 transacciones al mes por legalizar</td><td>Soportes asociados automáticamente vía WhatsApp y conciliados con Siesa</td></tr>
-<tr><td>Viáticos sin un flujo de viaje ligado a la tarjeta</td><td>Creación de tarjeta con flujo de viaje: presupuesto, vigencia y cashback por viaje</td></tr>
-<tr><td>270 proveedores pagados con tarjetas de tesorería</td><td>Dispersión desde la plataforma y conexión con Siesa</td></tr>
-<tr><td>Necesidad de reportes consolidados por tipo de tarjeta</td><td>Reportería en tiempo real por tarjeta, usuario y centro de costo</td></tr>
+<h2><span class="tag">Valores agregados</span>Lo que Mattelsa obtiene con Jeeves</h2>
+<p>Capacidades de producto ligadas a lo que conversamos: viáticos, tesorería, proveedores, Siesa y reportería.</p>
+<div class="tbl" style="overflow-x:auto;">
+<table class="cmp">
+<tr><th>Capacidad</th><th>Jeeves</th><th>Clara</th></tr>
+<tr><td>Tarjetas corporativas físicas y virtuales<small>Tesorería (13 de gastos fijos) y viáticos (33); virtuales ilimitadas en Apple Pay / Google Pay incluidas en el plan</small></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+<tr><td>Travel Manager · flujo de viaje<small>Del presupuesto aprobado a la tarjeta virtual con vigencia ligada al viaje</small></td><td><span class="yes">✓</span></td><td><span class="na">—</span></td></tr>
+<tr><td>Pago a proveedores que no reciben tarjeta<small>Dispersión a cuentas bancarias desde el cupo para sus 270 proveedores</small></td><td><span class="yes">✓ Jeeves Pay</span></td><td><span class="no">✗ Solo pagos con tarjeta</span></td></tr>
+<tr><td>Agentes de IA<small>Creación de políticas, seguimiento de soportes faltantes y detección de tendencias</small></td><td><span class="yes">✓</span></td><td><span class="na">—</span></td></tr>
+<tr><td>Conexión con Siesa<small>Carga de centros de costo y asignación de cada gasto a su código contable</small></td><td><span class="yes">✓</span></td><td><span class="na">—</span></td></tr>
+<tr><td>API para integración con el ERP</td><td><span class="yes">✓ Sin costo</span></td><td><span class="na">—</span></td></tr>
+<tr><td>Privacidad y acceso segmentado<small>Los administradores no ven datos sensibles de los usuarios</small></td><td><span class="yes">✓</span></td><td><span class="na">—</span></td></tr>
 </table>
+</div>
+<p class="note">Comparativo basado en el análisis de capacidades Jeeves vs. Clara. “—” indica que la capacidad no hace parte de la solución actual de Mattelsa.</p>
+<div class="va-grid" style="margin-top:22px;">
+<div class="va"><div class="ic">✈️</div><h3>Viáticos sin anticipos</h3><p>Las 33 tarjetas de viáticos pasan a virtuales en la wallet: se crean con el presupuesto aprobado y solo están activas durante el viaje.</p></div>
+<div class="va"><div class="ic">🏦</div><h3>Tesorería y proveedores</h3><p>Las 13 tarjetas de gastos fijos quedan en tesorería y Jeeves Pay dispersa a cuentas a los proveedores que no reciben tarjeta.</p></div>
+<div class="va"><div class="ic">📊</div><h3>Cierre contable más rápido</h3><p>Conexión con Siesa, reportería en tiempo real por tarjeta, usuario y centro de costo, y soportes asociados automáticamente.</p></div>
+</div>
 </div>
 </section>
 <!-- PROPUESTA GOLD -->
@@ -269,66 +272,51 @@ if(e.key === 'Enter'){ document.getElementById('accessKeyBtn').click(); }
 <div class="wrap">
 <h2><span class="tag">Propuesta</span>Plan Gold para Mattelsa</h2>
 <div class="grid grid-2">
-<div class="card"><h3 style="font-size:14px;">Incluye</h3><p style="font-size:13.5px;">20 usuarios · USD 3.000 anuales · Tarjetas virtuales ilimitadas · Tarjetas en Apple Pay / Google Pay · Flujo de viaje · Conexión con Siesa · Reportería · 1% cashback 6 meses · 37 días sin interés</p></div>
-<div class="card"><h3 style="font-size:14px;">Estructura de tarjetas</h3><p style="font-size:13.5px;">Tesorería: 13 tarjetas para gastos fijos y proveedores · Viáticos: 33 tarjetas, solo virtuales en la wallet · Gasto promedio: $215,5MM COP/mes · 355 transacciones/mes</p></div>
+<div class="card"><h3 style="font-size:14px;">Plan Gold · USD 3.000 / año</h3><p style="font-size:22px;font-weight:800;color:var(--text);margin:4px 0 8px;" id="planCop">—</p><p style="font-size:13.5px;">20 usuarios · Tarjetas físicas y virtuales ilimitadas · Apple Pay / Google Pay · Travel Manager · Jeeves Pay · Conexión con Siesa y API · Agentes de IA · Reportería en tiempo real</p></div>
+<div class="card"><h3 style="font-size:14px;">Beneficios financieros</h3><p style="font-size:22px;font-weight:800;color:var(--green);margin:4px 0 8px;" id="planCb">—</p><p style="font-size:13.5px;">1% de cashback durante los primeros 6 meses · Hasta 37 días sin intereses · Estructura: 13 tarjetas de gastos fijos y 33 de viáticos</p></div>
 </div>
 </div>
 </section>
-<div class="footer">
-<div class="wrap">Preparado por Carlos Gomez · Senior Enterprise AE · carlos.gomez@tryjeeves.com · +57 316 480 1023 · Jeeves — tryjeeves.com</div>
-</div>
+<div class="footer"><div class="wrap">Preparado por Carlos Gomez · Senior Enterprise AE · carlos.gomez@tryjeeves.com · +57 316 480 1023 · Jeeves — tryjeeves.com<br>Simulación con fines ilustrativos. Valores en USD más los impuestos que apliquen; el valor se pacta en COP a la TRM del día de la firma.</div></div>
 <script>
-function fmtCOP(n){ const neg=n<0; const a=Math.round(Math.abs(n)).toLocaleString('es-CO'); return (neg?'-':'')+'$'+a+' COP'; }
-function fmtPct(n){ return (n>=0?'+':'') + n.toFixed(0) + '%'; }
-function v(id){ return parseFloat(document.getElementById(id).value) || 0; }
+(function(){
+const $=id=>document.getElementById(id);
+const v=id=>parseFloat($(id).value)||0;
+const cop=n=>(n<0?'-':'')+'$'+Math.round(Math.abs(n)).toLocaleString('es-CO');
+const mm=n=>'$'+(n/1e6).toLocaleString('es-CO',{maximumFractionDigits:1})+'MM';
+const pct=n=>n.toLocaleString('es-CO',{maximumFractionDigits:2})+'%';
+const net=n=>n<0?'<span class="green">+'+cop(-n)+' a favor</span>':cop(n);
+function diffTxt(j,c){const d=c-j; return d>=0?'Ahorro con Jeeves: <b class="green">'+cop(d)+'</b>':'Diferencia: <b style="color:var(--text)">'+cop(-d)+'</b> más con Jeeves';}
 function recalc(){
-const valorPlanUSD = v('valorPlanUSD'), gastoMensual = v('gastoMensual'), trm = v('trm');
-const chkFacturas = document.getElementById('chkFacturas').checked;
-const salarioMensual = v('salarioMensual'), facturasMes = v('facturasMes'), minutosAhorrados = v('minutosAhorrados'), horasMes = v('horasMes');
-const chkRetiros = document.getElementById('chkRetiros').checked;
-const gastoRetiros = v('gastoRetiros'), comisionRetiros = v('comisionRetiros');
-document.getElementById('facturasAssumptions').style.display = chkFacturas ? 'grid' : 'none';
-document.getElementById('retirosAssumptions').style.display = chkRetiros ? 'grid' : 'none';
-const volumenAnual = gastoMensual * 12;
-const ahorroGMF = volumenAnual * 0.004;
-const ahorroCashback = gastoMensual * 6 * 0.01;
-const costoHora = horasMes ? salarioMensual / horasMes : 0;
-const horasCapMes = facturasMes * (minutosAhorrados/60);
-const ahorroFacturas = chkFacturas ? horasCapMes * costoHora * 12 : 0;
-const retirosAplica = chkRetiros && comisionRetiros < 3;
-const ahorroRetiros = retirosAplica ? (3 - comisionRetiros)/100 * gastoRetiros * 12 : 0;
-const costoAnualCOP = valorPlanUSD * trm;
-const ahorroY1 = ahorroGMF + ahorroCashback + ahorroFacturas + ahorroRetiros;
-const ahorroY2 = ahorroGMF + ahorroFacturas + ahorroRetiros;
-document.getElementById('gmfPreview').value = fmtCOP(ahorroGMF) + ' / año (0.4%)';
-document.getElementById('cashbackPreview').value = fmtCOP(ahorroCashback) + ' (solo año 1)';
-document.getElementById('outGMF').textContent = fmtCOP(ahorroGMF);
-document.getElementById('outCashback').textContent = fmtCOP(ahorroCashback);
-const outF = document.getElementById('outFacturas');
-outF.textContent = chkFacturas ? fmtCOP(ahorroFacturas) : 'Desactivado';
-outF.className = chkFacturas ? 'value' : 'value off';
-const outR = document.getElementById('outRetiros');
-if(!chkRetiros){ outR.textContent = 'Desactivado'; outR.className='value off'; }
-else if(comisionRetiros >= 3){ outR.textContent = 'Sin ahorro (comisión ≥ 3%)'; outR.className='value off'; }
-else { outR.textContent = fmtCOP(ahorroRetiros); outR.className='value'; }
-document.getElementById('outAhorroY1').textContent = fmtCOP(ahorroY1);
-document.getElementById('outAhorroY2').textContent = fmtCOP(ahorroY2);
-document.getElementById('outNetoY1sub').textContent = 'Menos costo de plataforma (' + fmtCOP(costoAnualCOP) + ') = ' + fmtCOP(ahorroY1 - costoAnualCOP) + ' neto';
-document.getElementById('outNetoY2sub').textContent = 'Menos costo de plataforma (' + fmtCOP(costoAnualCOP) + ') = ' + fmtCOP(ahorroY2 - costoAnualCOP) + ' neto';
-const roe1 = costoAnualCOP > 0 ? (ahorroY1 - costoAnualCOP) / costoAnualCOP * 100 : 0;
-const roe2 = costoAnualCOP > 0 ? (ahorroY2 - costoAnualCOP) / costoAnualCOP * 100 : 0;
-document.getElementById('outROE1').textContent = fmtPct(roe1);
-document.getElementById('outROE2').textContent = fmtPct(roe2);
-document.getElementById('outROE1sub').textContent = 'Ahorro ' + fmtCOP(ahorroY1) + ' vs. costo ' + fmtCOP(costoAnualCOP);
-document.getElementById('outROE2sub').textContent = 'Ahorro ' + fmtCOP(ahorroY2) + ' vs. costo ' + fmtCOP(costoAnualCOP);
+const g=v('gasto'), plan=v('planUSD'), trm=v('trm'), cFee=v('claraFee'), j1=v('jCb1')/100, m=Math.min(12,Math.max(0,v('jMeses'))), j2=v('jCb2')/100, c=v('cCb')/100;
+const feeJ=plan*trm, feeC=cFee*12;
+const cbJ1=g*j1*m+g*j2*(12-m), cbJ2=g*j2*12, cbC=g*c*12;
+const nJ1=feeJ-cbJ1, nC1=feeC-cbC, nJ2=feeJ-cbJ2, nC2=feeC-cbC, nJ24=nJ1+nJ2, nC24=nC1+nC2;
+$('gastoLbl').textContent=mm(g)+' / mes';
+document.querySelectorAll('.chip').forEach(b=>b.classList.toggle('on',+b.dataset.g===g));
+$('feeJm').textContent=cop(feeJ/12); $('feeJy').textContent=cop(feeJ)+' al año';
+$('feeCm').textContent=cop(cFee); $('feeCy').textContent=cop(feeC)+' al año';
+$('cbJpct').textContent=pct(j1*100); $('cbJpct2').textContent='primeros '+m+' meses'+(j2>0?' · luego '+pct(j2*100):'');
+$('cbCpct').textContent=pct(c*100);
+$('cbJ1').textContent=cop(cbJ1); $('cbC1').textContent=cop(cbC);
+$('netJ1').innerHTML=net(nJ1); $('netC1').innerHTML=net(nC1); $('d1').innerHTML=diffTxt(nJ1,nC1);
+$('netJ2').innerHTML=net(nJ2); $('netC2').innerHTML=net(nC2); $('d2').innerHTML=diffTxt(nJ2,nC2);
+$('netJ24').innerHTML=net(nJ24); $('netC24').innerHTML=net(nC24); $('d24').innerHTML=diffTxt(nJ24,nC24);
+const rJ=feeJ?(cbJ1-feeJ)/feeJ*100:0, rC=feeC?(cbC-feeC)/feeC*100:0;
+$('roeJ').textContent=(rJ>=0?'+':'')+Math.round(rJ)+'%'; $('roeC').textContent=(rC>=0?'+':'')+Math.round(rC)+'%';
+$('roeJs').textContent='Cashback '+cop(cbJ1)+' vs. suscripción '+cop(feeJ);
+$('roeCs').textContent='Cashback '+cop(cbC)+' vs. suscripción '+cop(feeC);
+const kJ=j1*m+j2*(12-m)+j2*12, kC=c*24, be=(kJ-kC)>0?2*(feeJ-feeC)/(kJ-kC):NaN;
+if(isFinite(be) && be>0){ $('breakeven').textContent=mm(be)+' / mes'; $('breakevenSub').textContent=g>=be?'El consumo simulado ('+mm(g)+') está por encima: Jeeves cuesta menos que Clara.':'El consumo simulado ('+mm(g)+') está por debajo de este umbral.'; }
+else { $('breakeven').textContent= (feeJ<=feeC?'Desde $0':'—'); $('breakevenSub').textContent=''; }
+$('planCop').textContent='≈ '+cop(feeJ)+' COP al año · '+cop(feeJ/12)+' al mes';
+$('planCb').textContent=cop(cbJ1)+' de cashback en el año 1';
 }
-document.getElementById('toggleCalc').addEventListener('click', function(){
-const p = document.getElementById('calcPanel');
-p.hidden = !p.hidden;
-this.textContent = p.hidden ? '⚙️ Ver cálculos y supuestos' : '⚙️ Ocultar cálculos y supuestos';
-});
-document.querySelectorAll('.calc input:not([disabled])').forEach(el => { el.addEventListener('input', recalc); el.addEventListener('change', recalc); });
+document.querySelectorAll('.calc input:not([disabled])').forEach(el=>{el.addEventListener('input',recalc);el.addEventListener('change',recalc);});
+document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{$('gasto').value=b.dataset.g;recalc();}));
+$('toggleCalc').addEventListener('click',function(){const p=$('calcPanel');p.hidden=!p.hidden;this.textContent=p.hidden?'⚙️ Ver cálculos y supuestos':'⚙️ Ocultar cálculos y supuestos';});
 recalc();
+})();
 </script>
 </body>
 </html>
