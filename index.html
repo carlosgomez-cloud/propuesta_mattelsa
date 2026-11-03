@@ -1,323 +1,345 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Jeeves × Mattelsa — Comparativo Plan Gold</title>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mattelsa × Jeeves · Propuesta Plan Gold y Simulador de Eficiencia Financiera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
---bg:#0B0B0E; --bg-card:#141418; --bg-card-2:#17171C;
---green:#00D68F; --gold:#C9A84C; --text:#F5F5F7; --text-dim:#9C9CA6; --border:#26262E;
-}
-*{box-sizing:border-box;}
-body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter Tight','Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.5;}
-a{color:var(--green);}
-.wrap{max-width:980px;margin:0 auto;padding:0 24px;}
-section{padding:56px 0;border-bottom:1px solid var(--border);}
-h1,h2,h3{font-family:'Inter Tight',sans-serif;font-weight:700;margin:0 0 10px;}
-h2{font-size:26px;}
-h2 .tag{color:var(--gold);font-size:12px;letter-spacing:2px;display:block;margin-bottom:6px;font-weight:700;text-transform:uppercase;}
-p{color:var(--text-dim);margin:0 0 10px;}
-.pill{display:inline-flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--text-dim);}
-.grid{display:grid;gap:16px;}
-.grid-2{grid-template-columns:1fr 1fr;}
-@media(max-width:800px){.grid-2{grid-template-columns:1fr;}}
-.card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;}
-.accent-green{color:var(--green);} .accent-gold{color:var(--gold);}
-table{width:100%;border-collapse:collapse;font-size:13.5px;}
-th,td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left;}
-th{color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:1px;}
-td{color:var(--text-dim);}
-/* HERO */
-.hero{padding:56px 0 40px;text-align:center;position:relative;}
-.top-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:36px;}
-.jeeves-mark{display:flex;align-items:center;}
-.jeeves-mark img{display:block;height:28px;width:auto;}
-.client-logo-badge img{display:block;border-radius:8px;height:40px;width:auto;}
-.hero h1{font-size:34px;max-width:720px;margin:0 auto 14px;}
-.hero p.lead{max-width:600px;margin:0 auto 28px;font-size:16px;}
-.stat-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
-.stat-row .pill{font-size:12.5px;}
-.stat-row b{color:var(--green);}
-/* CARD IMAGES (reales, tomadas del portafolio oficial de Jeeves) */
-.cards-row{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;align-items:flex-end;}
-.cc-photo{border-radius:16px;overflow:hidden;box-shadow:0 20px 40px -12px rgba(0,0,0,0.6);background:#000;}
-.cc-photo img{display:block;width:100%;height:100%;object-fit:cover;}
-.cc-world-elite{width:190px;height:245px;}
-.cc-world-elite img{object-position:top center;}
-.cc-corporate{width:260px;height:156px;}
-.cc-virtual{width:230px;height:139px;}
-.cc-proveedores{width:280px;height:115px;}
-.cc-caption{margin-top:8px;font-size:11px;color:var(--text-dim);text-align:center;text-transform:uppercase;letter-spacing:0.5px;}
-.cc-col{display:flex;flex-direction:column;align-items:center;}
-/* CALCULATOR */
-.calc{background:var(--bg-card-2);border:1px solid var(--border);border-radius:20px;padding:28px;}
-.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
-@media(max-width:800px){.calc-grid{grid-template-columns:1fr;}}
-.field{display:flex;flex-direction:column;gap:5px;}
-.field label{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:0.8px;}
-.field .hint{font-size:11px;color:var(--text-dim);text-transform:none;letter-spacing:0;}
-.field input, .field select{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:9px 11px;color:var(--text);font-size:14.5px;font-family:inherit;}
-.module{border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin-bottom:14px;}
-.module-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
-.module-head .toggle{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;cursor:pointer;}
-.module-head .toggle input{accent-color:var(--green);width:16px;height:16px;}
-.module-note{font-size:11.5px;color:var(--text-dim);margin-bottom:10px;}
-.savings-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0;}
-@media(max-width:900px){.savings-grid{grid-template-columns:repeat(2,1fr);}}
-.save-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;}
-.save-card .label{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;}
-.save-card .value{font-size:18px;font-weight:700;color:var(--green);}
-.save-card .value.off{color:var(--text-dim);font-weight:500;font-size:14px;}
-.totals-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px;}
-@media(max-width:800px){.totals-grid{grid-template-columns:1fr;}}
-.total-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;}
-.total-card .label{font-size:12px;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;}
-.total-card .value{font-size:22px;font-weight:700;color:var(--green);}
-.roe-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
-@media(max-width:800px){.roe-grid{grid-template-columns:1fr;}}
-.roe-card{background:linear-gradient(135deg,rgba(201,168,76,0.12),rgba(201,168,76,0.02));border:1px solid var(--gold);border-radius:14px;padding:20px;text-align:center;}
-.roe-card .label{font-size:12px;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;}
-.roe-card .value{font-size:30px;font-weight:800;color:var(--gold);}
-.roe-card .sub{font-size:12.5px;color:var(--text-dim);margin-top:4px;}
-.assump{font-size:11.5px;color:var(--text-dim);margin-top:16px;}
-.footer{padding:36px 0;text-align:center;color:var(--text-dim);font-size:12.5px;}
+:root{--bg:#0B0B0E;--card:#141418;--card2:#17171C;--green:#00D68F;--gold:#C9A84C;--txt:#F5F5F7;--mut:#9C9CA6;--bd:#26262E}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:Inter,system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:'Inter Tight',Inter,sans-serif;letter-spacing:-.02em}
+.gold{color:var(--gold)}.green{color:var(--green)}
+.top{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
+.brand{font-family:'Inter Tight';font-weight:800;font-size:22px;letter-spacing:.18em}
+.brand small{display:block;font-size:10px;letter-spacing:.2em;color:var(--mut);font-weight:500}
+.clogo{height:64px;width:auto;border-radius:4px}
+.hero{padding:30px 0 50px;border-bottom:1px solid var(--bd)}
+.pill{display:inline-block;border:1px solid var(--bd);border-radius:999px;padding:6px 14px;font-size:12px;color:var(--mut);margin-bottom:18px}
+.pill.ok{border-color:#1f3a2f;color:var(--green);background:#0f1a15}
+.hero h1{font-size:clamp(30px,4.6vw,52px);line-height:1.08;font-weight:700;max-width:900px}
+.hero p.lead{color:var(--mut);font-size:17px;max-width:780px;margin-top:18px}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.stat{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:12px 16px}
+.stat b{display:block;font-family:'Inter Tight';font-size:22px;color:var(--gold)}
+.stat span{font-size:12px;color:var(--mut)}
+.cards{display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-top:34px}
+.cc{display:flex;flex-direction:column;gap:8px}
+.cc-photo{background:#000;border:1px solid var(--bd);border-radius:16px;overflow:hidden}
+.cc-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.cc span{font-size:12px;color:var(--mut)}
+.p-elite{width:190px;height:245px}.p-corp{width:260px;height:156px}.p-virt{width:230px;height:139px}.p-pay{width:280px;height:125px}
+section{padding:56px 0;border-bottom:1px solid var(--bd)}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.sh h2{font-size:clamp(24px,3vw,34px)}
+.sh p{color:var(--mut);max-width:680px;margin-top:6px}
+.toggle-btn{background:transparent;border:1px solid var(--bd);color:var(--txt);border-radius:999px;padding:10px 18px;font:500 14px Inter;cursor:pointer}
+.toggle-btn:hover{border-color:var(--gold)}
+.panel{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:22px;margin-bottom:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+label{display:block;font-size:13px;color:var(--mut);margin-bottom:6px}
+input[type=number],input[type=text]{width:100%;background:var(--card2);border:1px solid var(--bd);color:var(--txt);border-radius:10px;padding:11px 12px;font:500 15px Inter}
+input:disabled{opacity:.85;color:var(--gold)}
+.hint{font-size:12px;color:var(--mut);margin-top:5px}
+.note{font-size:12.5px;color:var(--mut);background:var(--card2);border:1px dashed var(--bd);border-radius:12px;padding:14px;margin-top:18px}
+.res-title{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin:6px 0 12px}
+.rsg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.rs{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:18px}
+.rs small{color:var(--mut);font-size:13px}
+.rs b{display:block;font-family:'Inter Tight';font-size:24px;margin-top:4px;color:var(--green)}
+.tot{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:16px}
+.tt{background:linear-gradient(180deg,#121a16,#141418);border:1px solid #1f3a2f;border-radius:18px;padding:22px}
+.tt small{color:var(--mut)}
+.tt .big{font-family:'Inter Tight';font-size:34px;font-weight:700;color:var(--green);margin:4px 0 10px}
+.tt .net{font-size:14px;color:var(--mut);border-top:1px solid var(--bd);padding-top:10px}
+.tt .net b{color:var(--txt);font-size:18px}
+.roe{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:16px}
+.rr{background:linear-gradient(180deg,#1f1a0d,#141418);border:1px solid #4a3d18;border-radius:18px;padding:24px;text-align:center}
+.rr small{color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-size:12px}
+.rr .big{font-family:'Inter Tight';font-size:52px;font-weight:800;color:var(--gold);line-height:1.1;margin-top:6px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--bd);border-radius:16px;overflow:hidden}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--bd);vertical-align:top;font-size:14.5px}
+th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);background:var(--card2)}
+td:first-child{font-weight:600;width:24%}
+td:nth-child(2){color:var(--mut)}
+tr:last-child td{border-bottom:none}
+.tbl{overflow-x:auto}
+/* aprobación */
+.apv{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.ap{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:24px}
+.ap.g{border-color:#4a3d18;background:linear-gradient(180deg,#1f1a0d,#141418)}
+.ap h3{font-size:18px;margin-bottom:10px}
+.ap .amt{font-family:'Inter Tight';font-size:44px;font-weight:800;color:var(--gold);line-height:1.05}
+.ap .sub{color:var(--mut);font-size:14px;margin-top:6px}
+.ramp{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.rp{background:var(--card2);border:1px solid var(--bd);border-radius:14px;padding:14px}
+.rp small{color:var(--mut);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.rp b{display:block;font-family:'Inter Tight';font-size:22px;margin-top:2px}
+.rp span{display:block;font-size:12.5px;color:var(--mut);margin-top:4px}
+.cond{list-style:none;counter-reset:c}
+.cond li{counter-increment:c;position:relative;padding:11px 0 11px 40px;border-bottom:1px solid #1d1d23;font-size:14.5px}
+.cond li:last-child{border-bottom:none}
+.cond li:before{content:counter(c);position:absolute;left:0;top:10px;width:26px;height:26px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);font:600 13px/24px Inter;text-align:center}
+.cond li small{display:block;color:var(--mut);font-size:13px}
+.plan{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.pc{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:24px}
+.pc.g{border-color:#4a3d18}
+.pc h3{font-size:20px;margin-bottom:4px}
+.pc .price{font-family:'Inter Tight';font-size:30px;font-weight:700;color:var(--gold);margin:6px 0 14px}
+.pc ul{list-style:none}
+.pc li{padding:7px 0 7px 24px;position:relative;font-size:14.5px;border-bottom:1px solid #1d1d23}
+.pc li:before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}
+.warn{margin-top:14px;font-size:13.5px;background:#1f1a0d;border:1px solid #4a3d18;color:#e9d9a8;border-radius:12px;padding:12px 14px}
+.cmp td{vertical-align:middle}
+.cmp td:nth-child(2),.cmp td:nth-child(3){color:var(--txt);text-align:center;width:26%}
+.cmp th:nth-child(2),.cmp th:nth-child(3){text-align:center}
+.cmp th:nth-child(2){color:var(--gold)}
+.yes{color:var(--green);font-weight:700}.no{color:#ff7a7a;font-weight:700}
+.cmp-note{font-size:12.5px;color:var(--mut);margin-top:10px}
+.ph{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.phc{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:22px}
+.phc .ic{font-size:24px}
+.phc h3{font-size:17px;margin:8px 0 6px}
+.phc p{color:var(--mut);font-size:14px}
+.phc.g{border-color:#4a3d18;background:linear-gradient(180deg,#1f1a0d,#141418)}
+.tag{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid #4a3d18;border-radius:999px;padding:4px 10px;margin-bottom:10px}
+.slider-box{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:18px 20px;margin-bottom:16px}
+.slider-box label{display:block;font-size:14px;color:var(--mut);margin-bottom:10px}
+.slider-box label b{color:var(--txt);font-size:18px}
+.slider-box input[type=range]{width:100%;accent-color:var(--gold);cursor:pointer}
+.slider-scale{position:relative;height:18px;font-size:12px;color:var(--mut);margin-top:4px}
+.slider-scale span{position:absolute;top:0;white-space:nowrap}
+.slider-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.slider-top label{margin:0}
+.manual{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mut)}
+.manual input{width:190px;background:var(--card2);border:1px solid var(--bd);color:var(--txt);border-radius:10px;padding:8px 10px;font:600 14px Inter;text-align:right}
+.over{color:var(--gold)}
+footer{padding:36px 0 50px;color:var(--mut);font-size:13.5px}
+footer b{color:var(--txt)}
+@media(max-width:640px){.p-elite{width:150px;height:195px}.p-corp,.p-virt,.p-pay{width:100%;height:auto;aspect-ratio:1.7}.cc{width:100%}.cc:first-child{width:auto}.clogo{height:48px}.ramp{grid-template-columns:1fr}.ap .amt{font-size:36px}}
 </style>
 </head>
-<body class="locked">
-<style>
-#accessGate{position:fixed;inset:0;z-index:9999;background:#0B0B0E;display:flex;align-items:center;justify-content:center;padding:24px;}
-#accessGate.hidden{display:none;}
-#accessGate .box{max-width:360px;width:100%;background:#141418;border:1px solid #26262E;border-radius:16px;padding:32px 28px;text-align:center;font-family:'Inter Tight','Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
-#accessGate .box img{height:26px;margin-bottom:18px;}
-#accessGate h2{font-size:16px;color:#F5F5F7;margin:0 0 8px;font-weight:700;}
-#accessGate p{font-size:13px;color:#9C9CA6;margin:0 0 18px;}
-#accessGate input{width:100%;background:#0B0B0E;border:1px solid #26262E;border-radius:10px;padding:11px 14px;color:#F5F5F7;font-size:14.5px;text-align:center;letter-spacing:1px;box-sizing:border-box;margin-bottom:12px;font-family:inherit;}
-#accessGate button{width:100%;background:#00D68F;border:none;border-radius:10px;padding:11px 14px;color:#0B0B0E;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;}
-#accessGate .err{color:#e5484d;font-size:12.5px;margin-top:10px;display:none;}
-body.locked > :not(#accessGate){display:none !important;}
-</style>
-<div id="accessGate">
-<div class="box">
-<img src="jeeves-logo.png" alt="Jeeves"/>
-<h2>Propuesta privada</h2>
-<p>Ingresa la clave que te compartimos por correo para ver tu propuesta.</p>
-<input type="password" id="accessKeyInput" placeholder="Clave de acceso" autocomplete="off"/>
-<button id="accessKeyBtn" type="button">Entrar</button>
-<div class="err" id="accessKeyErr">Clave incorrecta, intenta de nuevo.</div>
-</div>
-</div>
-<script>
-(function(){
-var KEY = "MtLsGold26";
-var stored = null;
-try { stored = sessionStorage.getItem('jeeves_access_ok'); } catch(e){}
-function unlock(){
-document.body.classList.remove('locked');
-document.getElementById('accessGate').classList.add('hidden');
-try { sessionStorage.setItem('jeeves_access_ok','1'); } catch(e){}
-}
-if(stored === '1'){ unlock(); }
-document.getElementById('accessKeyBtn').addEventListener('click', function(){
-var val = document.getElementById('accessKeyInput').value.trim();
-if(val === KEY){ unlock(); }
-else { document.getElementById('accessKeyErr').style.display='block'; }
-});
-document.getElementById('accessKeyInput').addEventListener('keydown', function(e){
-if(e.key === 'Enter'){ document.getElementById('accessKeyBtn').click(); }
-});
-})();
-</script>
-<style>
-.cmp td,.cmp th{vertical-align:middle;}
-.cmp td:nth-child(2),.cmp td:nth-child(3),.cmp th:nth-child(2),.cmp th:nth-child(3){text-align:center;width:24%;}
-.cmp td:first-child{color:var(--text);font-weight:600;}
-.cmp small{display:block;color:var(--text-dim);font-weight:400;font-size:11.5px;margin-top:2px;}
-.yes{color:var(--green);font-weight:700;}
-.no{color:#e5484d;font-weight:700;}
-.na{color:var(--text-dim);}
-.gold{color:var(--gold);}
-.green{color:var(--green);}
-.slider-box{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin-bottom:18px;}
-.slider-box .val{font-size:26px;font-weight:800;color:var(--text);}
-.slider-box input[type=range]{width:100%;accent-color:var(--gold);margin:12px 0 6px;}
-.slider-box .marks{display:flex;justify-content:space-between;font-size:11px;color:var(--text-dim);}
-.chip{background:var(--bg-card-2);border:1px solid var(--border);color:var(--text-dim);border-radius:999px;padding:5px 12px;font-size:12px;cursor:pointer;font-family:inherit;}
-.chip.on{border-color:var(--gold);color:var(--gold);}
-.vs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0;}
-@media(max-width:800px){.vs-grid{grid-template-columns:1fr;}}
-.vs{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px 18px;}
-.vs .label{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;}
-.vs .row{display:flex;justify-content:space-between;align-items:baseline;margin:4px 0;font-size:13px;color:var(--text-dim);}
-.vs .row b{font-size:17px;color:var(--text);}
-.vs .row.j b{color:var(--green);}
-.vs .diff{margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:12.5px;color:var(--text-dim);}
-.vs .diff b{font-size:15px;}
-.hl{background:linear-gradient(135deg,rgba(201,168,76,0.12),rgba(201,168,76,0.02));border:1px solid var(--gold);border-radius:14px;padding:18px 20px;margin-top:14px;display:grid;grid-template-columns:1.3fr 1fr;gap:18px;align-items:center;}
-@media(max-width:800px){.hl{grid-template-columns:1fr;}}
-.hl .big{font-size:30px;font-weight:800;color:var(--gold);}
-.va-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-@media(max-width:900px){.va-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:600px){.va-grid{grid-template-columns:1fr;}}
-.va{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:18px;}
-.va .ic{font-size:22px;margin-bottom:6px;}
-.va h3{font-size:15px;margin-bottom:6px;}
-.va p{font-size:13px;margin:0;}
-.note{font-size:11.5px;color:var(--text-dim);margin-top:10px;}
-</style>
-<!-- HERO -->
-<section class="hero">
+<body>
+<div id="gate" style="position:fixed;inset:0;background:#0B0B0E;z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;font-family:Inter,system-ui,sans-serif"><form id="gf" style="background:#141418;border:1px solid #26262E;border-radius:18px;padding:30px 26px;width:100%;max-width:340px;text-align:center;color:#F5F5F7"><img src="https://carlosgomez-cloud.github.io/propuesta_constructorabolivar/jeeves-logo_1.png" alt="Jeeves" style="height:42px;width:auto;display:block;margin:0 auto"><div style="color:#9C9CA6;font-size:14px;margin:8px 0 18px">Propuesta privada · Mattelsa</div><input id="gp" type="password" placeholder="Clave de acceso" autocomplete="off" style="width:100%;background:#17171C;border:1px solid #26262E;color:#F5F5F7;border-radius:10px;padding:12px;font:500 15px Inter,sans-serif;margin-bottom:12px"><button type="submit" style="width:100%;background:#C9A84C;color:#0B0B0E;border:none;border-radius:10px;padding:12px;font:600 15px Inter,sans-serif;cursor:pointer">Ingresar</button><div id="ge" style="color:#ff7a7a;font-size:13px;margin-top:10px;min-height:16px"></div></form></div>
+<script>(function(){var H="97bf672b85042df6b2ab231723df58ce09e1e76a525625819a97515a20640672";function open(){var g=document.getElementById("gate");if(g)g.remove();}try{if(sessionStorage.getItem("rk_mat")===H){open();return;}}catch(_){}document.getElementById("gf").addEventListener("submit",async function(e){e.preventDefault();var val=document.getElementById("gp").value.trim();var buf=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(val));var h=Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,"0")}).join("");if(h===H){try{sessionStorage.setItem("rk_mat",H)}catch(_){}open();}else{document.getElementById("ge").textContent="Clave incorrecta";}});})();</script>
+
 <div class="wrap">
-<div class="top-bar">
-<div class="jeeves-mark"><img src="jeeves-logo.png" alt="Jeeves"/></div>
-<div class="client-logo-badge"><img src="mattelsa-logo.svg" alt="Mattelsa" style="height:22px;border-radius:0;"/></div>
+<div class="top">
+<div class="brand"><img src="https://carlosgomez-cloud.github.io/propuesta_constructorabolivar/jeeves-logo_1.png" alt="Jeeves" style="height:44px;width:auto;display:block"><small style="margin-top:8px">Propuesta para</small></div>
+<img class="clogo" src="mattelsa-logo.svg" alt="Mattelsa" style="height:26px">
 </div>
-<span class="pill">Propuesta Comercial · Plan Gold · Octubre 2026</span>
-<h1>Más plataforma por un costo neto menor que su solución actual.</h1>
-<p class="lead">Viáticos en tarjetas virtuales en la wallet con flujo de viaje, tesorería y pagos a proveedores con dispersión a cuentas, conexión con Siesa y agentes de IA — comparado frente a Clara sobre el mismo consumo.</p>
-<div class="stat-row">
-<span class="pill"><b>46</b> tarjetas activas</span>
-<span class="pill"><b>20</b> usuarios</span>
-<span class="pill"><b>1%</b> cashback · 6 meses</span>
-<span class="pill"><b>Ilimitadas</b> tarjetas virtuales</span>
+
+<div class="hero">
+<span class="pill ok">Propuesta comercial · Plan Gold · Noviembre 2026</span>
+<h1>Plan Gold de <span class="gold">USD 3.000</span> al año que se paga solo con el <span class="green">cashback</span>, y más plataforma que su solución actual.</h1>
+<p class="lead">Viáticos en tarjetas virtuales en la wallet con flujo de viaje, tarjetas de tesorería para gastos fijos y pagos a proveedores con dispersión a cuentas, conexión con Siesa y agentes de IA — en un solo plan para las 46 tarjetas de Mattelsa.</p>
+<div class="stats">
+<div class="stat"><b>46</b><span>tarjetas activas · 13 fijos y 33 viáticos</span></div>
+<div class="stat"><b>1%</b><span>cashback · primeros 6 meses</span></div>
+<div class="stat"><b>4x1000</b><span>exención total · tarjetas</span></div>
+<div class="stat"><b>37 días</b><span>sin intereses · tarjetas</span></div>
+<div class="stat"><b>Jeeves Pay</b><span>dispersión a cuentas · proveedores</span></div>
 </div>
-<div class="cards-row">
-<div class="cc-col"><div class="cc-photo cc-world-elite"><img src="jeeves-card-world-elite.png" alt="Tarjeta Jeeves World Elite"/></div><div class="cc-caption">World Elite · Directivos</div></div>
-<div class="cc-col"><div class="cc-photo cc-corporate"><img src="jeeves-card-corporate.png" alt="Tarjeta corporativa Jeeves"/></div><div class="cc-caption">Corporativa · Gastos fijos</div></div>
-<div class="cc-col"><div class="cc-photo cc-virtual"><img src="jeeves-card-virtual.png" alt="Tarjeta virtual Jeeves"/></div><div class="cc-caption">Virtual · Wallet para viáticos</div></div>
-<div class="cc-col"><div class="cc-photo cc-proveedores"><img src="jeeves-pay-proveedores.png" alt="Jeeves Pay - Dispersión a proveedores"/></div><div class="cc-caption">Jeeves Pay · Dispersión de pagos a proveedores</div></div>
+<div class="cards">
+<div class="cc"><div class="cc-photo p-elite"><img src="jeeves-card-world-elite.png" alt="Tarjeta World Elite"></div><span>World Elite · Directivos</span></div>
+<div class="cc"><div class="cc-photo p-corp"><img src="jeeves-card-corporate.png" alt="Tarjeta Corporativa"></div><span>Corporativa · Gastos fijos</span></div>
+<div class="cc"><div class="cc-photo p-virt"><img src="jeeves-card-virtual.png" alt="Tarjeta Virtual"></div><span>Virtual · Wallet para viáticos</span></div>
+<div class="cc"><div class="cc-photo p-pay"><img src="jeeves-pay-proveedores.png" alt="Jeeves Pay"></div><span>Jeeves Pay · Pagos a proveedores</span></div>
 </div>
 </div>
-</section>
-<!-- COMPARATIVO ECONOMICO -->
-<section>
-<div class="wrap">
-<h2><span class="tag">Comparativo económico</span>Jeeves vs. Clara sobre el mismo consumo</h2>
-<p>Mueve la barra para simular el consumo mensual en tarjetas. Comparamos solo lo que cambia entre las dos plataformas: la suscripción y el cashback. Con el botón puedes ver y ajustar los supuestos.</p>
-<div class="calc">
+
+<section id="calc">
+<div class="sh">
+<div>
+<h2>Simulador de eficiencia financiera</h2>
+<p>Calculado sobre el gasto promedio que reportó Mattelsa (≈ COP 215,5 millones/mes en sus 46 tarjetas) y el Plan Gold. Mueve la barra para simular distintos niveles de consumo mensual; con el botón puedes ver y ajustar los demás supuestos.</p>
+</div>
+<button class="toggle-btn" id="btnCalc" onclick="toggleCalc()">⚙️ Ver cálculos y supuestos</button>
+</div>
+
+<div class="panel" id="calcPanel" hidden>
+<div class="grid">
+<div><label>Plan de la Plataforma</label><input type="text" value="Gold · 20 usuarios" disabled></div>
+<div><label>Valor Anual del Plan (USD)</label><input type="number" id="planUSD" value="3000" min="0" step="100"></div>
+<div><label>TRM del día (COP/USD)</label><input type="number" id="trm" value="3148.02" min="0" step="0.01"><div class="hint">TRM oficial · 28 oct 2026 (editable). El valor se pacta en COP a la TRM del día de la firma.</div></div>
+<div><label>Gravamen 4x1000 (GMF) · anual</label><input type="text" id="gmfPrev" disabled></div>
+<div><label>Cashback 1% · primeros 6 meses</label><input type="text" id="cbPrev" disabled></div>
+</div>
+<div class="panel" style="margin:18px 0 0;background:var(--card2)">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px"><b style="font-size:15px">🧾 Ahorro por Automatización de Facturas</b><label style="margin:0;display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="chkFact" style="accent-color:var(--green);width:16px;height:16px"> Activar</label></div>
+<div class="grid" id="factGrid" style="opacity:.45">
+<div><label>Salario mensual operativo (COP)</label><input type="number" id="salario" value="3500000" step="100000"></div>
+<div><label>Facturas procesadas al mes</label><input type="number" id="facturas" value="355" step="5"><div class="hint">355 transacciones promedio al mes reportadas por Mattelsa</div></div>
+<div><label>Minutos por factura (captura manual)</label><input type="number" id="minutos" value="8" step="1"></div>
+<div><label>Horas trabajadas al mes</label><input type="number" id="horas" value="160" step="10"></div>
+</div>
+</div>
+<div class="note"><b>Fórmulas.</b> Volumen anual = gasto mensual × 12 · Ahorro 4x1000 = volumen anual × 0,4% · Cashback = gasto mensual × 6 meses × 1% · Automatización de facturas (si se activa) = facturas/mes × minutos ÷ 60 × (salario ÷ horas) × 12 · Costo de plataforma = valor anual del plan × TRM · Neto = ahorro total − costo de plataforma · ROE = neto ÷ costo de plataforma · Consumo mínimo mensual para cubrir la suscripción: con 4x1000 + cashback = costo de plataforma ÷ (12 × 0,4% + 6 × 1%) · solo con 4x1000 = costo de plataforma ÷ (12 × 0,4%). Cashback de Clara = gasto mensual × 12 × 0,10%.<br><br><b>Supuestos.</b> El gasto de referencia es el promedio mensual reportado por Mattelsa para sus 46 tarjetas activas (últimos 3 meses). El ahorro por automatización de facturas viene desactivado; al activarlo, salario, minutos y horas son estimaciones no confirmadas. La TRM es de referencia y se puede ajustar.</div>
+</div>
+
 <div class="slider-box">
-<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-<div><div style="font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.8px;">Consumo mensual en tarjetas</div><div class="val" id="gastoLbl">—</div></div>
-<div style="display:flex;gap:8px;flex-wrap:wrap;"><button type="button" class="chip" data-g="215500000">$215,5MM · reportado</button><button type="button" class="chip" data-g="300000000">$300MM</button></div>
+<div class="slider-top">
+<label>Gasto mensual en tarjetas: <b id="gastoLbl">—</b> <span id="gastoPct" style="font-size:13px"></span></label>
+<div class="manual">Ingresar valor (COP) <input type="text" inputmode="numeric" id="gastoTxt" value="215.500.000"></div>
 </div>
-<input type="range" id="gasto" min="100000000" max="500000000" step="500000" value="215500000"/>
-<div class="marks"><span>$100MM</span><span>$300MM</span><span>$500MM</span></div>
+<input type="range" id="gastoRange" min="50000000" max="600000000" step="500000" value="215500000">
+<input type="hidden" id="gasto" value="215500000">
+<div class="slider-scale"><span style="left:0">$50 millones</span><span style="left:30.1%;transform:translateX(-50%)">▲ $215,5 millones · gasto actual</span><span style="right:0">$600 millones</span></div>
 </div>
-<button type="button" id="toggleCalc" class="pill" style="cursor:pointer;font-family:inherit;margin-bottom:14px;">⚙️ Ver cálculos y supuestos</button>
-<div id="calcPanel" hidden>
-<div class="calc-grid">
-<div class="field"><label>Plan de la Plataforma</label><input type="text" value="Gold · 20 usuarios" disabled /></div>
-<div class="field"><label>Valor Anual del Plan Jeeves (USD)</label><input type="number" id="planUSD" value="3000" step="100" /></div>
-<div class="field"><label>TRM del día (COP/USD)</label><input type="number" id="trm" value="3148.02" step="0.01" /><span class="hint">TRM oficial · 28 de octubre de 2026</span></div>
-<div class="field"><label>Suscripción mensual Clara (COP)</label><input type="number" id="claraFee" value="600000" step="10000" /><span class="hint">Valor que hoy paga Mattelsa</span></div>
-<div class="field"><label>Cashback Jeeves · primeros meses (%)</label><input type="number" id="jCb1" value="1" step="0.05" /></div>
-<div class="field"><label>Meses con cashback Jeeves</label><input type="number" id="jMeses" value="6" step="1" min="0" max="12" /></div>
-<div class="field"><label>Cashback Jeeves · meses siguientes (%)</label><input type="number" id="jCb2" value="0" step="0.05" /><span class="hint">Aplica desde el mes siguiente al periodo inicial</span></div>
-<div class="field"><label>Cashback Clara (%)</label><input type="number" id="cCb" value="0.10" step="0.05" /><span class="hint">Cashback actual de Clara, sobre 12 meses del mismo consumo</span></div>
+
+<div class="res-title">Ahorros por rubro · Anual</div>
+<div class="rsg">
+<div class="rs"><small>Ahorro 4x1000 (GMF)</small><b id="rGmf">—</b></div>
+<div class="rs"><small>Cashback 1% · primeros 6 meses</small><b id="rCb">—</b></div>
+<div class="rs"><small>Automatización de facturas</small><b id="rFact">—</b></div>
 </div>
-<p class="assump">Fórmulas: suscripción Jeeves = valor del plan × TRM. Suscripción Clara = valor mensual × 12. Cashback Jeeves año 1 = consumo × % inicial × meses + consumo × % siguiente × meses restantes. Cashback Clara = consumo × % × 12. Costo neto = suscripción − cashback. ROE = (cashback − suscripción) ÷ suscripción. No incluimos el 4x1000 ni la automatización de facturas porque ambas plataformas ofrecen beneficios equivalentes; la comparación se centra en lo que cambia. El consumo de $215,5MM/mes corresponde a lo reportado por Mattelsa (46 tarjetas activas, últimos 3 meses).</p>
+
+<div class="tot">
+<div class="tt"><small>Ahorro Total · Primer Año</small><div class="big" id="t1">—</div><div class="net">Menos costo de plataforma (<span class="cost">—</span>) = <b id="n1">—</b> neto</div></div>
+<div class="tt" style="background:linear-gradient(180deg,#1f1a0d,#141418);border-color:#4a3d18"><small>Consumo mínimo mensual para cubrir la suscripción (<span class="cost">—</span> al año)</small>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px">
+<div><div style="font-size:12px;color:var(--mut)">Con 4x1000 + cashback</div><div class="big" id="minMes" style="color:var(--gold);font-size:26px;margin:2px 0">—</div><div style="font-size:12.5px;color:var(--mut)"><b id="minPct" style="color:var(--txt)">—</b> del gasto actual</div></div>
+<div><div style="font-size:12px;color:var(--mut)">Solo con 4x1000</div><div class="big" id="minMes2" style="color:var(--gold);font-size:26px;margin:2px 0">—</div><div style="font-size:12.5px;color:var(--mut)"><b id="minPct2" style="color:var(--txt)">—</b> del gasto actual</div></div>
 </div>
-<div class="tbl" style="overflow-x:auto;">
-<table class="cmp">
-<tr><th>Concepto</th><th>Jeeves · Gold</th><th>Clara</th></tr>
-<tr><td>Suscripción mensual</td><td><b id="feeJm">—</b><small id="feeJy">—</small></td><td><span id="feeCm">—</span><small id="feeCy">—</small></td></tr>
-<tr><td>Cashback</td><td><b class="gold" id="cbJpct">—</b><small id="cbJpct2">—</small></td><td><span id="cbCpct">—</span><small>sobre 12 meses</small></td></tr>
-<tr><td>Cashback estimado · primer año</td><td><b class="green" id="cbJ1">—</b></td><td id="cbC1">—</td></tr>
-</table>
+<div class="net" style="margin-top:12px">Consumo mensual con el que el ahorro paga el Plan Gold. El cashback aplica los primeros 6 meses; sin cashback, el consumo necesario es el de la columna "Solo con 4x1000".</div></div>
 </div>
-<div class="vs-grid">
-<div class="vs"><div class="label">Costo neto · Primer año</div><div class="row j"><span>Jeeves</span><b id="netJ1">—</b></div><div class="row"><span>Clara</span><b id="netC1">—</b></div><div class="diff" id="d1">—</div></div>
-<div class="vs"><div class="label">Costo neto · A partir del 2° año</div><div class="row j"><span>Jeeves</span><b id="netJ2">—</b></div><div class="row"><span>Clara</span><b id="netC2">—</b></div><div class="diff" id="d2">—</div></div>
-<div class="vs"><div class="label">Costo neto acumulado · 24 meses</div><div class="row j"><span>Jeeves</span><b id="netJ24">—</b></div><div class="row"><span>Clara</span><b id="netC24">—</b></div><div class="diff" id="d24">—</div></div>
+
+<div class="roe">
+<div class="rr"><small>🏆 ROE · Primer año</small><div class="big" id="roe1">—</div></div>
 </div>
-<h3 style="font-size:14px;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin:22px 0 4px;">🏆 ROE de la suscripción · Primer año</h3>
-<div class="roe-grid">
-<div class="roe-card"><div class="label">Jeeves · Gold</div><div class="value" id="roeJ">—</div><div class="sub" id="roeJs">&nbsp;</div></div>
-<div class="roe-card" style="border-color:var(--border);background:var(--bg-card);"><div class="label">Clara</div><div class="value" id="roeC" style="color:var(--text-dim);">—</div><div class="sub" id="roeCs">&nbsp;</div></div>
+</section>
+
+<section id="comparativo">
+<div class="sh"><div><h2>Jeeves vs. Clara</h2><p>Comparativo sobre el mismo consumo mensual del simulador (≈ <span id="cmpGasto">—</span>/mes).</p></div></div>
+<div class="tbl"><table class="cmp">
+<tr><th>Concepto</th><th>Jeeves</th><th>Clara</th></tr>
+<tr><td>Cashback</td><td><b class="gold">1%</b><br><small style="color:var(--mut)">primeros 6 meses</small></td><td>0,10%</td></tr>
+<tr><td>Cashback estimado · primer año</td><td><b class="green" id="cbJeeves">—</b></td><td id="cbClara">—</td></tr>
+<tr><td>Diferencia a favor con Jeeves</td><td colspan="2" style="text-align:center"><b class="gold" id="cbDiff" style="font-size:20px">—</b></td></tr>
+<tr><td>Suscripción anual</td><td><b id="subJ">—</b><br><small style="color:var(--mut)">Plan Gold · todo incluido</small></td><td id="subC">—<br><small style="color:var(--mut)">$600.000 al mes</small></td></tr>
+<tr><td>Costo neto · primer año<br><small style="color:var(--mut);font-weight:400">Suscripción − cashback</small></td><td><b class="green" id="netJ">—</b></td><td id="netC">—</td></tr>
+<tr><td>Travel Manager · flujo de viaje<br><small style="color:var(--mut);font-weight:400">Del presupuesto aprobado a la tarjeta virtual con vigencia ligada al viaje</small></td><td><span class="yes">✓</span></td><td>—</td></tr>
+<tr><td>Pago a proveedores que no reciben tarjeta<br><small style="color:var(--mut);font-weight:400">Dispersión a cuentas bancarias desde el cupo</small></td><td><span class="yes">✓ Jeeves Pay</span></td><td><span class="no">✗</span><br><small style="color:var(--mut)">Solo pagos con tarjeta</small></td></tr>
+<tr><td>Tarjetas corporativas físicas y virtuales</td><td><span class="yes">✓</span><br><small style="color:var(--mut)">Virtuales ilimitadas en Apple Pay / Google Pay</small></td><td><span class="yes">✓</span></td></tr>
+<tr><td>Conexión con Siesa</td><td><span class="yes">✓</span><br><small style="color:var(--mut)">Centros de costo y códigos contables</small></td><td>—</td></tr>
+<tr><td>API para integración con el ERP</td><td><span class="yes">✓ Sin costo</span></td><td>—</td></tr>
+<tr><td>Agentes de IA<br><small style="color:var(--mut);font-weight:400">Políticas, soportes faltantes y tendencias de gasto</small></td><td><span class="yes">✓</span></td><td>—</td></tr>
+<tr><td>Modelo de precio</td><td><span class="yes">✓ Todo incluido</span></td><td>Módulos adicionales con costo</td></tr>
+</table></div>
+<div class="cmp-note">Cashback de Clara calculado al 0,10% sobre 12 meses del mismo consumo. Cashback de Jeeves: 1% durante los primeros 6 meses. Suscripción de Clara: $600.000 al mes. “—” indica que la capacidad no hace parte de la solución actual de Mattelsa.</div>
+</section>
+
+<section id="diag">
+<div class="sh"><div><h2>Diagnóstico</h2><p>Lo que conversamos y cómo lo resuelve Jeeves.</p></div></div>
+<div class="tbl"><table>
+<tr><th>Frente</th><th>Hoy</th><th>Con Jeeves</th></tr>
+<tr><td>Viáticos</td><td>33 tarjetas de viáticos sin un flujo de viaje ligado a la tarjeta.</td><td>Tarjetas virtuales en la wallet, creadas con el presupuesto aprobado y activas solo durante el viaje, con cashback.</td></tr>
+<tr><td>Tesorería</td><td>13 tarjetas de gastos fijos y ~$215,5MM de gasto mensual.</td><td>Tarjetas de tesorería con hasta 37 días sin intereses, exención de 4x1000 y 1% de cashback los primeros 6 meses.</td></tr>
+<tr><td>Proveedores</td><td>270 proveedores, pagados solo con tarjeta.</td><td>Jeeves Pay dispersa a la cuenta de los proveedores que no reciben tarjeta, desde el mismo cupo.</td></tr>
+<tr><td>Contabilidad y reportes</td><td>Conciliación de ~355 transacciones al mes y necesidad de reportes consolidados.</td><td>Conexión con Siesa, soportes asociados automáticamente y reportería en tiempo real por tarjeta, usuario y centro de costo.</td></tr>
+</table></div>
+</section>
+
+<section id="plan">
+<div class="sh"><div><h2>Resumen del plan</h2></div></div>
+<div class="plan">
+<div class="pc g">
+<h3>Plan Gold</h3>
+<div class="price">USD 3.000 <span style="font-size:15px;color:var(--mut);font-weight:500">/ año</span></div>
+<div style="color:var(--mut);font-size:14px;margin:-8px 0 14px">≈ <span class="planCop">—</span> al año · se pacta en COP, sin exposición a tasa de cambio</div>
+<ul>
+<li>20 usuarios · tarjetas físicas y virtuales ilimitadas</li>
+<li>Tarjetas virtuales en Apple Pay / Google Pay para viáticos</li>
+<li>Travel Manager · flujo de viaje</li>
+<li>Jeeves Pay · pagos a proveedores con dispersión a cuentas</li>
+<li>Conexión con Siesa y API sin costo</li>
+<li>Agentes de IA y reportería en tiempo real</li>
+</ul>
 </div>
-<div class="hl">
-<div><div style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;">Consumo mínimo mensual para que Jeeves cueste menos que Clara a 24 meses</div><div class="big" id="breakeven">—</div><div style="font-size:12.5px;color:var(--text-dim);" id="breakevenSub">—</div></div>
-<div style="font-size:13px;color:var(--text-dim);">Por encima de ese consumo, Jeeves cuesta menos que Clara en el acumulado de dos años, y además incluye las capacidades que se comparan abajo.</div>
-</div>
+<div class="pc">
+<h3>Beneficios financieros</h3>
+<div class="price green" style="color:var(--green)" id="planNet">—</div>
+<ul>
+<li>Tarjetas: hasta 37 días sin intereses</li>
+<li>Exención total del 4x1000 en los pagos con tarjeta</li>
+<li>1% de cashback en tarjetas durante los primeros 6 meses</li>
+<li>Jeeves Pay: dispersión a cuentas con interés diario</li>
+</ul>
 </div>
 </div>
 </section>
-<!-- VALORES AGREGADOS -->
-<section>
-<div class="wrap">
-<h2><span class="tag">Valores agregados</span>Lo que Mattelsa obtiene con Jeeves</h2>
-<p>Capacidades de producto ligadas a lo que conversamos: viáticos, tesorería, proveedores, Siesa y reportería.</p>
-<div class="tbl" style="overflow-x:auto;">
-<table class="cmp">
-<tr><th>Capacidad</th><th>Jeeves</th><th>Clara</th></tr>
-<tr><td>Tarjetas corporativas físicas y virtuales<small>Tesorería (13 de gastos fijos) y viáticos (33); virtuales ilimitadas en Apple Pay / Google Pay incluidas en el plan</small></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
-<tr><td>Travel Manager · flujo de viaje<small>Del presupuesto aprobado a la tarjeta virtual con vigencia ligada al viaje</small></td><td><span class="yes">✓</span></td><td><span class="na">—</span></td></tr>
-<tr><td>Pago a proveedores que no reciben tarjeta<small>Dispersión a cuentas bancarias desde el cupo para sus 270 proveedores</small></td><td><span class="yes">✓ Jeeves Pay</span></td><td><span class="no">✗ Solo pagos con tarjeta</span></td></tr>
-<tr><td>Agentes de IA<small>Creación de políticas, seguimiento de soportes faltantes y detección de tendencias</small></td><td><span class="yes">✓</span></td><td><span class="na">—</span></td></tr>
-<tr><td>Conexión con Siesa<small>Carga de centros de costo y asignación de cada gasto a su código contable</small></td><td><span class="yes">✓</span></td><td><span class="na">—</span></td></tr>
-<tr><td>API para integración con el ERP</td><td><span class="yes">✓ Sin costo</span></td><td><span class="na">—</span></td></tr>
-<tr><td>Modelo de precio<small>Un solo plan con todas las capacidades, sin cobros adicionales por módulo o proceso</small></td><td><span class="yes">✓ Todo incluido</span></td><td><span class="na">Módulos adicionales con costo</span></td></tr>
-<tr><td>Privacidad y acceso segmentado<small>Los administradores no ven datos sensibles de los usuarios</small></td><td><span class="yes">✓</span></td><td><span class="na">—</span></td></tr>
-</table>
+
+<footer>
+<b>Carlos Gómez</b> · Senior Enterprise AE · Jeeves Colombia · carlos.gomez@tryjeeves.com · +57 316 480 1023<br>
+<span style="font-size:12px">Simulación con fines ilustrativos. Valores en USD más los impuestos que apliquen; el valor se pacta en COP a la TRM del día de la firma.</span>
+</footer>
 </div>
-<p class="note">Comparativo basado en el análisis de capacidades Jeeves vs. Clara. “—” indica que la capacidad no hace parte de la solución actual de Mattelsa.</p>
-<div class="va-grid" style="margin-top:22px;">
-<div class="va"><div class="ic">✈️</div><h3>Viáticos sin anticipos</h3><p>Las 33 tarjetas de viáticos pasan a virtuales en la wallet: se crean con el presupuesto aprobado y solo están activas durante el viaje.</p></div>
-<div class="va"><div class="ic">🏦</div><h3>Tesorería y proveedores</h3><p>Las 13 tarjetas de gastos fijos quedan en tesorería y Jeeves Pay dispersa a cuentas a los proveedores que no reciben tarjeta.</p></div>
-<div class="va"><div class="ic">📊</div><h3>Cierre contable más rápido</h3><p>Conexión con Siesa, reportería en tiempo real por tarjeta, usuario y centro de costo, y soportes asociados automáticamente.</p></div>
-</div>
-</div>
-</section>
-<!-- PROPUESTA GOLD -->
-<section style="border-bottom:none;">
-<div class="wrap">
-<h2><span class="tag">Propuesta</span>Plan Gold para Mattelsa</h2>
-<div class="grid grid-2">
-<div class="card"><h3 style="font-size:14px;">Plan Gold · USD 3.000 / año</h3><p style="font-size:22px;font-weight:800;color:var(--text);margin:4px 0 8px;" id="planCop">—</p><p style="font-size:12.5px;color:var(--gold);margin:0 0 8px;">Se pacta en pesos colombianos a la TRM del día de la firma: sin exposición a tasa de cambio.</p><p style="font-size:13.5px;">20 usuarios · Tarjetas físicas y virtuales ilimitadas · Apple Pay / Google Pay · Travel Manager · Jeeves Pay · Conexión con Siesa y API · Agentes de IA · Reportería en tiempo real</p></div>
-<div class="card"><h3 style="font-size:14px;">Beneficios financieros</h3><p style="font-size:22px;font-weight:800;color:var(--green);margin:4px 0 8px;" id="planCb">—</p><p style="font-size:13.5px;">1% de cashback durante los primeros 6 meses · Hasta 37 días sin intereses · Estructura: 13 tarjetas de gastos fijos y 33 de viáticos</p></div>
-</div>
-</div>
-</section>
-<div class="footer"><div class="wrap">Preparado por Carlos Gomez · Senior Enterprise AE · carlos.gomez@tryjeeves.com · +57 316 480 1023 · Jeeves — tryjeeves.com<br>Simulación con fines ilustrativos. Valores en USD más los impuestos que apliquen; el valor se pacta en COP a la TRM del día de la firma.</div></div>
+
 <script>
-(function(){
-const $=id=>document.getElementById(id);
-const v=id=>parseFloat($(id).value)||0;
-const cop=n=>(n<0?'-':'')+'$'+Math.round(Math.abs(n)).toLocaleString('es-CO');
-const mm=n=>'$'+(n/1e6).toLocaleString('es-CO',{maximumFractionDigits:1})+'MM';
-const pct=n=>n.toLocaleString('es-CO',{maximumFractionDigits:2})+'%';
-const net=n=>n<0?'<span class="green">+'+cop(-n)+' a favor</span>':cop(n);
-function diffTxt(j,c){const d=c-j; return d>=0?'Ahorro con Jeeves: <b class="green">'+cop(d)+'</b>':'Diferencia: <b style="color:var(--text)">'+cop(-d)+'</b> más con Jeeves';}
-function recalc(){
-const g=v('gasto'), plan=v('planUSD'), trm=v('trm'), cFee=v('claraFee'), j1=v('jCb1')/100, m=Math.min(12,Math.max(0,v('jMeses'))), j2=v('jCb2')/100, c=v('cCb')/100;
-const feeJ=plan*trm, feeC=cFee*12;
-const cbJ1=g*j1*m+g*j2*(12-m), cbJ2=g*j2*12, cbC=g*c*12;
-const nJ1=feeJ-cbJ1, nC1=feeC-cbC, nJ2=feeJ-cbJ2, nC2=feeC-cbC, nJ24=nJ1+nJ2, nC24=nC1+nC2;
-$('gastoLbl').textContent=mm(g)+' / mes';
-document.querySelectorAll('.chip').forEach(b=>b.classList.toggle('on',+b.dataset.g===g));
-$('feeJm').textContent=cop(feeJ/12); $('feeJy').textContent=cop(feeJ)+' al año';
-$('feeCm').textContent=cop(cFee); $('feeCy').textContent=cop(feeC)+' al año';
-$('cbJpct').textContent=pct(j1*100); $('cbJpct2').textContent='primeros '+m+' meses'+(j2>0?' · luego '+pct(j2*100):'');
-$('cbCpct').textContent=pct(c*100);
-$('cbJ1').textContent=cop(cbJ1); $('cbC1').textContent=cop(cbC);
-$('netJ1').innerHTML=net(nJ1); $('netC1').innerHTML=net(nC1); $('d1').innerHTML=diffTxt(nJ1,nC1);
-$('netJ2').innerHTML=net(nJ2); $('netC2').innerHTML=net(nC2); $('d2').innerHTML=diffTxt(nJ2,nC2);
-$('netJ24').innerHTML=net(nJ24); $('netC24').innerHTML=net(nC24); $('d24').innerHTML=diffTxt(nJ24,nC24);
-const rJ=feeJ?(cbJ1-feeJ)/feeJ*100:0, rC=feeC?(cbC-feeC)/feeC*100:0;
-$('roeJ').textContent=(rJ>=0?'+':'')+Math.round(rJ)+'%'; $('roeC').textContent=(rC>=0?'+':'')+Math.round(rC)+'%';
-$('roeJs').textContent='Cashback '+cop(cbJ1)+' vs. suscripción '+cop(feeJ);
-$('roeCs').textContent='Cashback '+cop(cbC)+' vs. suscripción '+cop(feeC);
-const kJ=j1*m+j2*(12-m)+j2*12, kC=c*24, be=(kJ-kC)>0?2*(feeJ-feeC)/(kJ-kC):NaN;
-if(isFinite(be) && be>0){ $('breakeven').textContent=mm(be)+' / mes'; $('breakevenSub').textContent=g>=be?'El consumo simulado ('+mm(g)+') está por encima: Jeeves cuesta menos que Clara.':'El consumo simulado ('+mm(g)+') está por debajo de este umbral.'; }
-else { $('breakeven').textContent= (feeJ<=feeC?'Desde $0':'—'); $('breakevenSub').textContent=''; }
-$('planCop').textContent='≈ '+cop(feeJ)+' COP al año · '+cop(feeJ/12)+' al mes';
-$('planCb').textContent=cop(cbJ1)+' de cashback en el año 1';
+var CLARA_MES=600000, GASTO_REF=215500000;
+function toggleCalc(){var p=document.getElementById('calcPanel');p.hidden=!p.hidden;document.getElementById('btnCalc').textContent=p.hidden?'⚙️ Ver cálculos y supuestos':'⚙️ Ocultar cálculos y supuestos';}
+function v(id){var x=parseFloat(document.getElementById(id).value);return isNaN(x)?0:x;}
+function cop(n){return (n<0?'−':'')+'$'+Math.round(Math.abs(n)).toLocaleString('es-CO');}
+function pct(n){return Math.round(n).toLocaleString('es-CO')+'%';}
+function calc(){
+var planUSD=v('planUSD'),trm=v('trm'),gasto=v('gasto');
+var fOn=document.getElementById('chkFact').checked;
+document.getElementById('factGrid').style.opacity=fOn?1:.45;
+var volumenAnual=gasto*12;
+var ahorroGMF=volumenAnual*0.004;
+var ahorroCashback=gasto*6*0.01;
+var ahorroFact=fOn?(v('facturas')*v('minutos')/60)*(v('horas')?v('salario')/v('horas'):0)*12:0;
+var costo=planUSD*trm;
+var t1=ahorroGMF+ahorroCashback+ahorroFact;
+var n1=t1-costo;
+var r1=costo>0?n1/costo*100:0;
+var base=Math.max(0,costo-ahorroFact);
+var minMes=base/(12*0.004+6*0.01);
+var minMes2=base/(12*0.004);
+document.getElementById('gmfPrev').value=cop(ahorroGMF);
+document.getElementById('cbPrev').value=cop(ahorroCashback);
+document.getElementById('gastoLbl').textContent=cop(gasto)+' / mes';
+var pctC=gasto/GASTO_REF*100;document.getElementById('gastoPct').textContent='· '+pctC.toLocaleString('es-CO',{maximumFractionDigits:0})+'% del gasto actual';
+document.getElementById('rGmf').textContent=cop(ahorroGMF);
+document.getElementById('rCb').textContent=cop(ahorroCashback);
+var rf=document.getElementById('rFact');rf.textContent=fOn?cop(ahorroFact):'Desactivado';rf.style.color=fOn?'':'var(--mut)';rf.style.fontSize=fOn?'':'18px';
+document.getElementById('t1').textContent=cop(t1);
+document.getElementById('n1').textContent=cop(n1);
+document.querySelectorAll('.cost').forEach(function(e){e.textContent=cop(costo);});
+document.getElementById('roe1').textContent=pct(r1);
+document.getElementById('minMes').textContent=cop(minMes);
+document.getElementById('minMes2').textContent=cop(minMes2);
+document.getElementById('minPct').textContent=(minMes/GASTO_REF*100).toLocaleString('es-CO',{maximumFractionDigits:1})+'%';
+document.getElementById('minPct2').textContent=(minMes2/GASTO_REF*100).toLocaleString('es-CO',{maximumFractionDigits:1})+'%';
+document.querySelectorAll('.planCop').forEach(function(e){e.textContent='COP '+Math.round(costo).toLocaleString('es-CO');});
+document.getElementById('planNet').textContent=cop(n1)+' neto · año 1';
+var cbClara=gasto*12*0.001, subC=CLARA_MES*12;
+document.getElementById('cmpGasto').textContent=cop(gasto);
+document.getElementById('cbJeeves').textContent=cop(ahorroCashback);
+document.getElementById('cbClara').textContent=cop(cbClara);
+document.getElementById('cbDiff').textContent=cop(ahorroCashback-cbClara)+' más en el primer año';
+document.getElementById('subJ').textContent=cop(costo);
+document.getElementById('subC').firstChild.textContent=cop(subC);
+var nJ=costo-ahorroCashback, nC=subC-cbClara;
+document.getElementById('netJ').textContent=nJ<0?'+'+cop(-nJ)+' a favor':cop(nJ);
+document.getElementById('netC').textContent=cop(nC);
 }
-document.querySelectorAll('.calc input:not([disabled])').forEach(el=>{el.addEventListener('input',recalc);el.addEventListener('change',recalc);});
-document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{$('gasto').value=b.dataset.g;recalc();}));
-$('toggleCalc').addEventListener('click',function(){const p=$('calcPanel');p.hidden=!p.hidden;this.textContent=p.hidden?'⚙️ Ver cálculos y supuestos':'⚙️ Ocultar cálculos y supuestos';});
-recalc();
+['planUSD','trm','salario','facturas','minutos','horas'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});
+document.getElementById('chkFact').addEventListener('change',calc);
+(function(){
+var r=document.getElementById('gastoRange'), t=document.getElementById('gastoTxt'), h=document.getElementById('gasto');
+function fmt(n){return Math.round(n).toLocaleString('es-CO');}
+function setVal(n,src){n=Math.max(0,Math.round(n)||0);h.value=n;if(src!=='r')r.value=Math.min(Math.max(n,+r.min),+r.max);if(src!=='t')t.value=fmt(n);calc();}
+r.addEventListener('input',function(){setVal(+r.value,'r');});
+t.addEventListener('input',function(){setVal(+t.value.replace(/[^0-9]/g,''),'t');});
+t.addEventListener('blur',function(){t.value=fmt(+h.value);});
 })();
+calc();
 </script>
+
 </body>
 </html>
