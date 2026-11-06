@@ -169,6 +169,7 @@ footer b{color:var(--txt)}
 <div><label>TRM del día (COP/USD)</label><input type="number" id="trm" value="3148.02" min="0" step="0.01"><div class="hint">TRM oficial · 28 oct 2026 (editable). El valor se pacta en COP a la TRM del día de la firma.</div></div>
 <div><label>Gravamen 4x1000 (GMF) · anual</label><input type="text" id="gmfPrev" disabled></div>
 <div><label>Cashback 1% · primeros 6 meses</label><input type="text" id="cbPrev" disabled></div>
+<div><label>Cashback Clara (%)</label><input type="number" id="claraPct" value="0.10" min="0" step="0.01"><div class="hint">Cashback actual de Clara sobre el consumo mensual</div></div>
 </div>
 <div class="panel" style="margin:18px 0 0;background:var(--card2)">
 <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px"><b style="font-size:15px">🧾 Ahorro por Automatización de Facturas</b><label style="margin:0;display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="chkFact" style="accent-color:var(--green);width:16px;height:16px"> Activar</label></div>
@@ -209,6 +210,14 @@ footer b{color:var(--txt)}
 <div class="net" style="margin-top:12px">Consumo mensual con el que el ahorro paga el Plan Gold. El cashback aplica los primeros 6 meses; sin cashback, el consumo necesario es el de la columna "Solo con 4x1000".</div></div>
 </div>
 
+<div class="tt" style="margin-top:16px;background:linear-gradient(180deg,#1f1a0d,#141418);border-color:#4a3d18"><small>⏱️ Tiempo que tardaría Clara en igualar el cashback de Jeeves</small>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:10px">
+<div><div style="font-size:12px;color:var(--mut)">Jeeves · 1% durante 6 meses</div><div class="big" id="tJ" style="color:var(--green);font-size:26px;margin:2px 0">—</div><div style="font-size:12.5px;color:var(--mut)"><b id="tJm" style="color:var(--txt)">—</b> al mes</div></div>
+<div><div style="font-size:12px;color:var(--mut)">Clara · <span id="tCpct">0,10%</span> mensual</div><div class="big" id="tCm" style="color:var(--txt);font-size:26px;margin:2px 0">—</div><div style="font-size:12.5px;color:var(--mut)">al mes</div></div>
+<div><div style="font-size:12px;color:var(--mut)">Meses para igualar a Jeeves</div><div class="big" id="tMeses" style="color:var(--gold);font-size:26px;margin:2px 0">—</div><div style="font-size:12.5px;color:var(--mut)" id="tAnos">—</div></div>
+</div>
+<div class="net" style="margin-top:12px" id="tTxt">—</div></div>
+
 <div class="roe">
 <div class="rr"><small>🏆 ROE · Primer año</small><div class="big" id="roe1">—</div></div>
 </div>
@@ -218,7 +227,7 @@ footer b{color:var(--txt)}
 <div class="sh"><div><h2>Jeeves vs. Clara</h2><p>Comparativo sobre el mismo consumo mensual del simulador (≈ <span id="cmpGasto">—</span>/mes).</p></div></div>
 <div class="tbl"><table class="cmp">
 <tr><th>Concepto</th><th>Jeeves</th><th>Clara</th></tr>
-<tr><td>Cashback</td><td><b class="gold">1%</b><br><small style="color:var(--mut)">primeros 6 meses</small></td><td>0,10%</td></tr>
+<tr><td>Cashback</td><td><b class="gold">1%</b><br><small style="color:var(--mut)">primeros 6 meses</small></td><td id="cbCPct">0,10%</td></tr>
 <tr><td>Cashback estimado · primer año</td><td><b class="green" id="cbJeeves">—</b></td><td id="cbClara">—</td></tr>
 <tr><td>Diferencia a favor con Jeeves</td><td colspan="2" style="text-align:center"><b class="gold" id="cbDiff" style="font-size:20px">—</b></td></tr>
 <tr><td>Tiempo para igualar el cashback de Jeeves<br><small style="color:var(--mut);font-weight:400">Lo que Jeeves devuelve en sus primeros 6 meses</small></td><td><b class="gold" style="font-size:18px">6 meses</b><br><small style="color:var(--mut)">al 1%</small></td><td><b id="cbMeses" style="font-size:18px">—</b><br><small style="color:var(--mut)" id="cbAnos">—</small></td></tr>
@@ -319,19 +328,19 @@ document.getElementById('minPct').textContent=(minMes/GASTO_REF*100).toLocaleStr
 document.getElementById('minPct2').textContent=(minMes2/GASTO_REF*100).toLocaleString('es-CO',{maximumFractionDigits:1})+'%';
 document.querySelectorAll('.planCop').forEach(function(e){e.textContent='COP '+Math.round(costo).toLocaleString('es-CO');});
 document.getElementById('planNet').textContent=cop(n1)+' neto · año 1';
-var cbClara=gasto*12*0.001, subC=CLARA_MES*12;
+var cp=v('claraPct')/100, cbClara=gasto*12*cp, subC=CLARA_MES*12;
 document.getElementById('cmpGasto').textContent=cop(gasto);
 document.getElementById('cbJeeves').textContent=cop(ahorroCashback);
 document.getElementById('cbClara').textContent=cop(cbClara);
 document.getElementById('cbDiff').textContent=cop(ahorroCashback-cbClara)+' más en el primer año';
-var mC=gasto>0?ahorroCashback/(gasto*0.001):0;document.getElementById('cbMeses').textContent=Math.round(mC)+' meses';document.getElementById('cbAnos').textContent='≈ '+(mC/12).toLocaleString('es-CO',{maximumFractionDigits:1})+' años al 0,10%';
+var cpTxt=(cp*100).toLocaleString('es-CO',{minimumFractionDigits:2,maximumFractionDigits:2})+'%';var mC=(gasto>0&&cp>0)?ahorroCashback/(gasto*cp):0;var mTxt=cp>0?Math.round(mC)+' meses':'Nunca';var aTxt=cp>0?'≈ '+(mC/12).toLocaleString('es-CO',{maximumFractionDigits:1})+' años':'sin cashback';document.getElementById('cbMeses').textContent=mTxt;document.getElementById('cbAnos').textContent=aTxt+' al '+cpTxt;document.getElementById('cbCPct').textContent=cpTxt;document.getElementById('tCpct').textContent=cpTxt;document.getElementById('tJ').textContent=cop(ahorroCashback);document.getElementById('tJm').textContent=cop(gasto*0.01);document.getElementById('tCm').textContent=cop(gasto*cp);document.getElementById('tMeses').textContent=mTxt;document.getElementById('tAnos').textContent=aTxt;document.getElementById('tTxt').textContent=cp>0?'Con '+cop(gasto)+' al mes en tarjetas, Jeeves devuelve '+cop(ahorroCashback)+' en los primeros 6 meses. Al '+cpTxt+', Clara devuelve '+cop(gasto*cp)+' al mes y necesita '+mTxt+' ('+aTxt.replace('≈ ','≈ ')+') para llegar al mismo valor.':'Sin cashback de Clara, nunca se iguala el cashback de Jeeves.';
 document.getElementById('subJ').textContent=cop(costo);
 document.getElementById('subC').firstChild.textContent=cop(subC);
 var nJ=costo-ahorroCashback, nC=subC-cbClara;
 document.getElementById('netJ').textContent=nJ<0?'+'+cop(-nJ)+' a favor':cop(nJ);
 document.getElementById('netC').textContent=cop(nC);
 }
-['planUSD','trm','salario','facturas','minutos','horas'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});
+['planUSD','trm','salario','facturas','minutos','horas','claraPct'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});
 document.getElementById('chkFact').addEventListener('change',calc);
 (function(){
 var r=document.getElementById('gastoRange'), t=document.getElementById('gastoTxt'), h=document.getElementById('gasto');
