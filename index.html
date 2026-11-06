@@ -140,6 +140,7 @@ footer b{color:var(--txt)}
 <div class="stats">
 <div class="stat"><b>46</b><span>tarjetas activas · 13 fijos y 33 viáticos</span></div>
 <div class="stat"><b>1%</b><span>cashback · primeros 6 meses</span></div>
+<div class="stat"><b>60 meses</b><span>tarda Clara en igualar ese cashback</span></div>
 <div class="stat"><b>4x1000</b><span>exención total · tarjetas</span></div>
 <div class="stat"><b>37 días</b><span>sin intereses · tarjetas</span></div>
 <div class="stat"><b>Jeeves Pay</b><span>dispersión a cuentas · proveedores</span></div>
@@ -220,6 +221,7 @@ footer b{color:var(--txt)}
 <tr><td>Cashback</td><td><b class="gold">1%</b><br><small style="color:var(--mut)">primeros 6 meses</small></td><td>0,10%</td></tr>
 <tr><td>Cashback estimado · primer año</td><td><b class="green" id="cbJeeves">—</b></td><td id="cbClara">—</td></tr>
 <tr><td>Diferencia a favor con Jeeves</td><td colspan="2" style="text-align:center"><b class="gold" id="cbDiff" style="font-size:20px">—</b></td></tr>
+<tr><td>Tiempo para igualar el cashback de Jeeves<br><small style="color:var(--mut);font-weight:400">Lo que Jeeves devuelve en sus primeros 6 meses</small></td><td><b class="gold" style="font-size:18px">6 meses</b><br><small style="color:var(--mut)">al 1%</small></td><td><b id="cbMeses" style="font-size:18px">—</b><br><small style="color:var(--mut)" id="cbAnos">—</small></td></tr>
 <tr><td>Suscripción anual</td><td><b id="subJ">—</b><br><small style="color:var(--mut)">Plan Gold · todo incluido</small></td><td id="subC">—<br><small style="color:var(--mut)">$600.000 al mes</small></td></tr>
 <tr><td>Costo neto · primer año<br><small style="color:var(--mut);font-weight:400">Suscripción − cashback</small></td><td><b class="green" id="netJ">—</b></td><td id="netC">—</td></tr>
 <tr><td>Travel Manager · flujo de viaje<br><small style="color:var(--mut);font-weight:400">Del presupuesto aprobado a la tarjeta virtual con vigencia ligada al viaje</small></td><td><span class="yes">✓</span></td><td>—</td></tr>
@@ -230,7 +232,7 @@ footer b{color:var(--txt)}
 <tr><td>Agentes de IA<br><small style="color:var(--mut);font-weight:400">Políticas, soportes faltantes y tendencias de gasto</small></td><td><span class="yes">✓</span></td><td>—</td></tr>
 <tr><td>Modelo de precio</td><td><span class="yes">✓ Todo incluido</span></td><td>Módulos adicionales con costo</td></tr>
 </table></div>
-<div class="cmp-note">Cashback de Clara calculado al 0,10% sobre 12 meses del mismo consumo. Cashback de Jeeves: 1% durante los primeros 6 meses. Suscripción de Clara: $600.000 al mes. “—” indica que la capacidad no hace parte de la solución actual de Mattelsa.</div>
+<div class="cmp-note">Cashback de Clara calculado al 0,10% sobre 12 meses del mismo consumo. Cashback de Jeeves: 1% durante los primeros 6 meses. Suscripción de Clara: $600.000 al mes. Con el 0,10%, Clara necesita 60 meses (5 años) para devolver lo que Jeeves devuelve en 6 meses al 1%. “—” indica que la capacidad no hace parte de la solución actual de Mattelsa.</div>
 </section>
 
 <section id="diag">
@@ -322,6 +324,7 @@ document.getElementById('cmpGasto').textContent=cop(gasto);
 document.getElementById('cbJeeves').textContent=cop(ahorroCashback);
 document.getElementById('cbClara').textContent=cop(cbClara);
 document.getElementById('cbDiff').textContent=cop(ahorroCashback-cbClara)+' más en el primer año';
+var mC=gasto>0?ahorroCashback/(gasto*0.001):0;document.getElementById('cbMeses').textContent=Math.round(mC)+' meses';document.getElementById('cbAnos').textContent='≈ '+(mC/12).toLocaleString('es-CO',{maximumFractionDigits:1})+' años al 0,10%';
 document.getElementById('subJ').textContent=cop(costo);
 document.getElementById('subC').firstChild.textContent=cop(subC);
 var nJ=costo-ahorroCashback, nC=subC-cbClara;
